@@ -106,8 +106,8 @@
       <div class="eyebrow">Hamburg, Germany · Open to relocation</div>
       <h1>Building reliable cloud-native platforms.</h1>
       <p class="headline">Cloud &amp; Platform Engineer · Kubernetes · DevOps · Infrastructure Automation</p>
-      <p class="intro">I work across Kubernetes platforms, CI/CD, infrastructure automation and observability. I’m particularly interested in the operational side of machine-learning systems: making deployments repeatable, services observable and recovery processes safer.</p>
-      <p class="meta">More than 3 years of DevOps experience across cloud infrastructure, delivery pipelines and production operations.</p>
+      <p class="intro">DevOps / Platform Engineer with over 3 years of hands-on experience across Skillmine, Test Yantra and AIcoo GmbH. At AIcoo in Hamburg I own the DevOps environment end to end for an LLM-based coordinator platform, from the first Kubernetes manifests through CI/CD, secrets, monitoring and disaster recovery for development and staging environments.</p>
+      <p class="meta">Currently completing an MSc in Applied Data Science and Analytics at SRH Hamburg (expected 03/2027) and writing my master's thesis at AIcoo.</p>
       <div class="actions">
         <a class="button primary" href="#projects">Explore projects</a>
         <a class="button" href="mailto:durgaprasadsunkara55@gmail.com">Email me</a>
@@ -162,16 +162,20 @@
       </div>
       <div class="timeline">
         <article class="role">
-          <div class="date">Apr 2026 – Sep 2026</div>
+          <div class="date">Apr 2026 – Present</div>
           <div>
-            <h3>MLOps / DevOps Intern</h3>
-            <div class="company">AI startup · Hamburg</div>
+            <h3>DevOps / Platform Engineer</h3>
+            <div class="company">AIcoo GmbH · Hamburg</div>
             <ul>
-              <li>Built and maintained development and staging environments on k3s hosted on Hetzner Cloud, using Kustomize manifests.</li>
-              <li>Developed CI workflows for container builds, registry publishing and Kubernetes deployments, including health and migration checks.</li>
-              <li>Worked on RAG infrastructure with text chunking, embedding generation and PostgreSQL/pgvector persistence.</li>
-              <li>Set up monitoring and logging with Prometheus, Grafana, Loki and Promtail; documented operational and recovery procedures.</li>
-              <li>Managed sealed secrets, registry credentials and TLS certificates with cert-manager and Let's Encrypt.</li>
+              <li>Own the DevOps environment for the coordinator platform (FastAPI backend, frontend and PostgreSQL) on k3s hosted by Hetzner Cloud.</li>
+              <li>Built the Kubernetes configuration with Kustomize: 28 manifests, development and staging overlays, Deployments and a PostgreSQL StatefulSet.</li>
+              <li>Built GitHub Actions CI/CD with a self-hosted runner to build images, publish to GHCR, run database migrations and deploy to development and staging.</li>
+              <li>Introduced Sealed Secrets for encrypted secret storage in Git; removed exposed credentials from Git history and rotated them.</li>
+              <li>Deployed Prometheus, Grafana, Loki and Promtail for metrics, dashboards and logs.</li>
+              <li>Wrote and tested disaster recovery covering Kubernetes manifests, the Sealed Secrets key, PostgreSQL and the repository.</li>
+              <li>Resolved operational issues involving crash-looping pods, image pulls, database credentials and migrations; fixed deployment workflow bugs.</li>
+              <li>Integrated more than 100 commits from master into the DevOps branch while preserving deployment stability; maintain documentation, runbooks and resource naming/tagging conventions.</li>
+              <li>Since October 2026, developing a Docker-based MLOps-style pipeline for LLM extraction of project emails from the Enron corpus as part of the master's thesis.</li>
             </ul>
           </div>
         </article>
@@ -200,6 +204,13 @@
             </ul>
           </div>
         </article>
+        <article class="role">
+          <div class="date">Mar 2020 – Sep 2021</div>
+          <div>
+            <h3>Software Associate</h3>
+            <div class="company">Tech Mahindra</div>
+          </div>
+        </article>
       </div>
     </section>
 
@@ -209,12 +220,12 @@
         <p class="section-note">Tools and platforms used across work and personal projects.</p>
       </div>
       <div class="skills">
-        <div class="skill"><strong>Containers &amp; orchestration</strong><span>Kubernetes, k3s, Docker, Helm, Kustomize</span></div>
-        <div class="skill"><strong>Cloud &amp; infrastructure</strong><span>AWS, Hetzner Cloud, Terraform, Ansible, Linux</span></div>
-        <div class="skill"><strong>CI/CD &amp; delivery</strong><span>GitHub Actions, GitLab CI, self-hosted runners</span></div>
+        <div class="skill"><strong>Containers &amp; orchestration</strong><span>Kubernetes (k3s), Docker, Helm, Kustomize, OpenShift</span></div>
+        <div class="skill"><strong>Cloud &amp; infrastructure</strong><span>AWS, Azure, GCP, Hetzner Cloud, Terraform, IAM</span></div>
+        <div class="skill"><strong>CI/CD &amp; delivery</strong><span>GitHub Actions, Jenkins, Argo CD, GitLab CI, self-hosted runners</span></div>
         <div class="skill"><strong>Observability</strong><span>Prometheus, Grafana, Loki, Promtail</span></div>
-        <div class="skill"><strong>Data &amp; ML infrastructure</strong><span>Python, PostgreSQL, pgvector, Airflow, Kafka</span></div>
-        <div class="skill"><strong>Security &amp; operations</strong><span>Sealed Secrets, cert-manager, TLS, runbooks, recovery</span></div>
+        <div class="skill"><strong>Data &amp; ML infrastructure</strong><span>PostgreSQL, pgvector, RAG pipelines, Docker, LLM extraction</span></div>
+        <div class="skill"><strong>Tools &amp; operations</strong><span>PowerShell, Jira, Sealed Secrets, disaster recovery, runbooks</span></div>
       </div>
     </section>
 
@@ -223,8 +234,8 @@
         <h2>Current learning</h2>
       </div>
       <div class="now">
-        <strong>Master's thesis · SRH Hochschule Hamburg</strong>
-        <p>Working on project email extraction from the Enron corpus, applying an MLOps-oriented approach to data processing and evaluation. In progress since October 2026.</p>
+        <strong>MSc Applied Data Science and Analytics · SRH Hochschule Hamburg</strong>
+        <p>Expected completion: March 2027. Master's thesis at AIcoo (since October 2026): building a Docker-based, MLOps-style data pipeline for LLM-based extraction of project emails from the Enron corpus.</p>
       </div>
     </section>
 
