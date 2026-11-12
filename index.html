@@ -1,258 +1,103 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#101820">
-  <meta name="description" content="Durgaprasad Sunkara — Cloud and Platform Engineer in Hamburg, focused on Kubernetes, DevOps, infrastructure automation and reliable ML systems.">
-  <title>Durgaprasad Sunkara — Cloud &amp; Platform Engineer</title>
-  <style>
-    :root {
-      color-scheme: dark;
-      --bg: #101820;
-      --surface: #17232d;
-      --surface-2: #1c2a35;
-      --text: #edf2f5;
-      --muted: #a8b7c2;
-      --line: #30414d;
-      --accent: #75c6b2;
-      --link: #9bc9ef;
-      --max: 1040px;
-    }
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      background: var(--bg);
-      color: var(--text);
-      font: 16px/1.7 Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    }
-    a { color: var(--link); text-decoration-thickness: 1px; text-underline-offset: 3px; }
-    a:hover { color: var(--accent); }
-    a:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; border-radius: 3px; }
-    .shell { width: min(var(--max), calc(100% - 40px)); margin: 0 auto; }
-    header { border-bottom: 1px solid var(--line); }
-    .nav { min-height: 68px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
-    .brand { color: var(--text); font-weight: 700; text-decoration: none; letter-spacing: -.02em; }
-    nav { display: flex; flex-wrap: wrap; gap: 22px; }
-    nav a { color: var(--muted); font-size: .92rem; text-decoration: none; }
-    nav a:hover { color: var(--text); }
-    main { padding-bottom: 56px; }
-    .hero { padding: clamp(64px, 10vw, 112px) 0 72px; max-width: 820px; }
-    .eyebrow { color: var(--accent); font-size: .83rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
-    h1 { margin: 14px 0 12px; font-size: clamp(2.5rem, 7vw, 4.6rem); line-height: 1.08; letter-spacing: -.055em; }
-    .headline { color: var(--muted); font-size: clamp(1.15rem, 2.5vw, 1.45rem); margin: 0 0 22px; }
-    .intro { max-width: 720px; color: #d2dce2; font-size: 1.08rem; }
-    .meta { color: var(--muted); font-size: .94rem; margin-top: 24px; }
-    .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
-    .button { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: 9px 16px; border: 1px solid var(--line); border-radius: 6px; color: var(--text); text-decoration: none; font-weight: 600; }
-    .button.primary { background: var(--accent); border-color: var(--accent); color: #10201d; }
-    .button:hover { border-color: var(--accent); text-decoration: none; }
-    section { padding: 42px 0; border-top: 1px solid var(--line); }
-    .section-head { margin-bottom: 24px; }
-    h2 { margin: 0; font-size: 1.65rem; letter-spacing: -.035em; }
-    .section-note { color: var(--muted); margin: 5px 0 0; }
-    .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
-    .card { background: var(--surface); border: 1px solid var(--line); border-radius: 9px; padding: 22px; }
-    .card h3 { margin: 0 0 8px; font-size: 1.12rem; line-height: 1.4; }
-    .card h3 a { color: var(--text); text-decoration: none; }
-    .card h3 a:hover { color: var(--accent); }
-    .card p { color: #c2ced6; margin: 0 0 14px; }
-    .tags { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 16px; }
-    .tag { color: var(--muted); background: var(--surface-2); border: 1px solid var(--line); border-radius: 4px; padding: 3px 8px; font-size: .78rem; }
-    .timeline { display: grid; gap: 20px; }
-    .role { display: grid; grid-template-columns: 190px 1fr; gap: 24px; padding: 20px 0; border-bottom: 1px solid var(--line); }
-    .role:last-child { border-bottom: 0; }
-    .date { color: var(--muted); font-size: .9rem; }
-    .role h3 { margin: 0; font-size: 1.1rem; }
-    .company { color: var(--accent); margin: 2px 0 10px; }
-    ul { margin: 8px 0 0; padding-left: 20px; color: #c2ced6; }
-    li { margin: 5px 0; }
-    .skills { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px 28px; }
-    .skill { padding: 14px 0; border-bottom: 1px solid var(--line); }
-    .skill strong { display: block; margin-bottom: 3px; }
-    .skill span { color: var(--muted); font-size: .94rem; }
-    .now { background: var(--surface); border-left: 3px solid var(--accent); border-radius: 0 8px 8px 0; padding: 20px 22px; }
-    .now p { margin: 5px 0 0; color: #c2ced6; }
-    footer { border-top: 1px solid var(--line); padding: 26px 0 38px; color: var(--muted); font-size: .9rem; }
-    footer .shell { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
-    @media (max-width: 700px) {
-      .nav { align-items: flex-start; flex-direction: column; justify-content: center; padding: 16px 0; gap: 10px; }
-      nav { gap: 14px; }
-      .grid, .skills { grid-template-columns: 1fr; }
-      .role { grid-template-columns: 1fr; gap: 4px; }
-      .hero { padding-top: 64px; }
-    }
-    @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-    }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#eeeae1">
+<meta name="description" content="Durgaprasad Sunkara, DevOps and platform engineering, Kubernetes, cloud infrastructure and applied ML systems.">
+<title>Durgaprasad Sunkara, Engineering, in practice</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#eeeae1;--ink:#171916;--muted:#65665f;--line:#c9c4b8;--acid:#e64b2f;--green:#b7c9a9;--dark:#1b211d;--white:#f5f2e9;--mono:"DM Mono",monospace;--sans:"Space Grotesk",Arial,sans-serif;--max:1280px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.55 var(--sans)}a{color:inherit;text-decoration:none}a:hover{color:var(--acid)}a:focus-visible{outline:2px solid var(--acid);outline-offset:4px}.wrap{width:min(var(--max),calc(100% - 64px));margin:auto}.mono,.eyebrow,.index,.meta,.tag{font:11px var(--mono);letter-spacing:.08em;text-transform:uppercase}
+.top{height:62px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between}.brand{font-weight:700;letter-spacing:-.04em}.nav{display:flex;gap:26px}.nav a{font:11px var(--mono);text-transform:uppercase;color:var(--muted)}
+.hero{padding:78px 0 82px;border-bottom:1px solid var(--line)}.hero-top,.hero-bottom{display:flex;justify-content:space-between;gap:20px;align-items:center}.kicker,.index{color:var(--acid)}.availability{color:var(--muted)}.hero-grid{display:grid;grid-template-columns:1.5fr .5fr;gap:42px;align-items:end;margin-top:48px}.hero h1{font-size:clamp(64px,11vw,150px);line-height:.82;letter-spacing:-.095em;margin:0;font-weight:600}.hero h1 span{display:block}.outline{-webkit-text-stroke:1.5px var(--ink);color:transparent}.hero-aside{max-width:310px}.hero-aside p{font-size:18px;line-height:1.4}.hero-aside .meta{color:var(--muted);line-height:2}.hero-bottom{margin-top:64px;color:var(--muted);font-size:13px}.hero-bottom a{font:11px var(--mono);color:var(--acid)}
+.marquee{background:var(--acid);color:white;padding:12px 0;font:11px var(--mono);letter-spacing:.13em;white-space:nowrap;overflow:hidden;text-transform:uppercase}
+.section{padding:88px 0;border-bottom:1px solid var(--line)}.head{display:grid;grid-template-columns:160px 1fr;gap:30px;margin-bottom:45px}.index{padding-top:8px}.title{font-size:clamp(40px,6vw,76px);line-height:.95;letter-spacing:-.075em;margin:0}.intro{max-width:650px;color:var(--muted);font-size:17px;margin:16px 0 0}
+.dark-panel{background:var(--dark);color:var(--white);padding:32px}.panel-head{display:flex;justify-content:space-between;border-bottom:1px solid #465047;padding-bottom:17px;margin-bottom:22px;color:var(--green)}svg{width:100%;height:auto;display:block}svg text{font:11px var(--mono);fill:#f0eee4}svg .sub{font-size:9px;fill:#aeb8aa}svg .node{fill:#28342c;stroke:#8e9d8b}svg .hot{fill:#542b24;stroke:#ef765d}svg .wire{fill:none;stroke:#8c9b88;stroke-dasharray:4 5}svg .hotwire{fill:none;stroke:#ef765d}.legend{display:flex;gap:20px;flex-wrap:wrap;color:#aeb8aa;font:10px var(--mono);text-transform:uppercase;margin-top:18px}
+.projects{border-top:1px solid var(--line)}.project{display:grid;grid-template-columns:55px 1fr 220px;gap:24px;padding:29px 0;border-bottom:1px solid var(--line)}.num{font:12px var(--mono);color:var(--acid)}.project h3{font-size:clamp(25px,3.3vw,42px);line-height:1;letter-spacing:-.06em;margin:0 0 12px}.project p{max-width:720px;color:#55584f;margin:0}.side{font:10px/2 var(--mono);color:var(--muted);text-transform:uppercase}.side a{display:block;color:var(--acid);margin-top:8px}
+.cases{display:grid;grid-template-columns:1fr 1fr;gap:14px}.case{background:#e4dfd4;border:1px solid var(--line);padding:25px;min-height:250px;display:flex;flex-direction:column;justify-content:space-between}.case h3{font-size:clamp(25px,3vw,37px);line-height:1;letter-spacing:-.06em;margin:28px 0 12px}.case p{color:#575950;margin:0}.case .foot{font:10px var(--mono);text-transform:uppercase;color:var(--muted);border-top:1px solid var(--line);padding-top:14px;margin-top:25px}
+.timeline{border-top:1px solid var(--line)}.role{display:grid;grid-template-columns:190px 1fr;gap:32px;padding:25px 0;border-bottom:1px solid var(--line)}.date{font:11px/1.8 var(--mono);color:var(--acid)}.role h3{font-size:25px;letter-spacing:-.05em;line-height:1;margin:0}.org{color:var(--muted);font-size:14px;margin:6px 0 12px}.role ul{margin:0;padding-left:18px;color:#50534b;max-width:780px}.role li{padding:3px 0}
+.toolkit{background:var(--dark);color:var(--white);padding:75px 0}.toolkit .title{color:var(--white)}.toolgrid{display:grid;grid-template-columns:repeat(3,1fr);margin-top:42px;border-top:1px solid #465047}.tool{padding:20px 20px 20px 0;border-bottom:1px solid #465047}.tool b{font:11px var(--mono);text-transform:uppercase;color:var(--green)}.tool p{font-size:14px;color:#c5c9bf;margin:9px 0 0}
+.thesis{display:grid;grid-template-columns:1fr .8fr;gap:45px;align-items:center}.graphic{background:#dcd7ca;border:1px solid var(--line);padding:24px;min-height:270px;display:flex;flex-direction:column;justify-content:space-between}.bars{height:120px;display:flex;align-items:end;gap:5px}.bars i{display:block;flex:1;background:var(--acid)}.bars i:nth-child(1){height:35%}.bars i:nth-child(2){height:60%}.bars i:nth-child(3){height:48%}.bars i:nth-child(4){height:90%}.bars i:nth-child(5){height:72%}.bars i:nth-child(6){height:100%}.bars i:nth-child(7){height:55%}.bars i:nth-child(8){height:82%}
+.contact{background:var(--acid);color:white;padding:80px 0}.contact h2{font-size:clamp(50px,9vw,110px);line-height:.85;letter-spacing:-.09em;margin:20px 0 35px}.contact-row{display:flex;justify-content:space-between;align-items:end;gap:24px}.contact a{font:12px var(--mono);text-transform:uppercase;border-bottom:1px solid #ffd6ce;padding-bottom:5px;margin-right:20px}.contact-meta{font:11px/2 var(--mono);text-transform:uppercase;color:#ffe0d8}
+footer{background:var(--dark);color:#aeb8aa;padding:20px 0;font:10px var(--mono);text-transform:uppercase}.footrow{display:flex;justify-content:space-between;gap:20px}
+@media(max-width:760px){.wrap{width:calc(100% - 36px)}.nav{gap:12px}.nav a{font-size:9px}.hero-grid,.thesis{grid-template-columns:1fr}.hero h1{font-size:clamp(60px,16vw,95px)}.hero-bottom{align-items:flex-start;flex-direction:column}.head{grid-template-columns:1fr;gap:10px}.project{grid-template-columns:32px 1fr}.side{grid-column:2}.cases{grid-template-columns:1fr}.role{grid-template-columns:1fr;gap:5px}.toolgrid{grid-template-columns:1fr 1fr}.contact-row{align-items:flex-start;flex-direction:column}.top{height:auto;padding:15px 0;align-items:flex-start;flex-direction:column;gap:12px}.nav{width:100%;justify-content:space-between}.dark-panel{padding:18px}}
+@media(max-width:430px){.toolgrid{grid-template-columns:1fr}.hero-top{align-items:flex-start;flex-direction:column}.project h3{font-size:28px}.panel-head{flex-direction:column;gap:8px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+/* Typography refinement: natural word spacing, calmer tracking and cleaner reading rhythm. */
+body { word-spacing: normal; text-align: left; }
+p, li { letter-spacing: 0; word-spacing: normal; }
+.hero h1 { letter-spacing: -.065em; }
+.title { letter-spacing: -.045em; }
+.project h3, .case h3, .role h3, .contact h2 { letter-spacing: -.035em; }
+.portrait { width: 100%; max-width: 270px; aspect-ratio: 4 / 5; object-fit: cover; object-position: center 30%; display: block; margin: 0 0 24px auto; border: 1px solid var(--line); }
+.resume-link { display: inline-flex; gap: 14px; align-items: center; margin-top: 20px; padding: 11px 14px; border: 1px solid var(--acid); color: var(--acid); font: 10px var(--mono); letter-spacing: .06em; }
+.resume-link:hover { background: var(--acid); color: white; }
+.marquee { display: none; }
+@media(max-width:760px) { .portrait { max-width: 210px; margin: 0 0 20px; } }
+
+
+/* User-requested cleanup: remove dash-like horizontal divider rules. */
+.top, .hero, .section, .projects, .project, .case, .timeline, .role,
+.toolgrid, .tool, .panel-head { border-top: 0 !important; border-bottom: 0 !important; }
+
+</style>
 </head>
 <body>
-  <header>
-    <div class="shell nav">
-      <a class="brand" href="#top">Durgaprasad Sunkara</a>
-      <nav aria-label="Main navigation">
-        <a href="#projects">Projects</a>
-        <a href="#experience">Experience</a>
-        <a href="#skills">Skills</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </div>
-  </header>
+<header class="wrap top"><a class="brand" href="#top">DS<span style="color:var(--acid)">.</span> / ENGINEERING NOTES</a><nav class="nav"><a href="#systems">Systems</a><a href="#work">Work</a><a href="#fieldnotes">Field notes</a><a href="#experience">Experience</a><a href="#writing">Writing</a><a href="#contact">Contact</a></nav></header>
+<main id="top">
+<section class="hero wrap"><div class="hero-top"><span class="eyebrow">Independent engineering portfolio / 2026</span><span class="availability mono">● Hamburg, Germany · Open to relocation</span></div><div class="hero-grid"><div><div class="kicker eyebrow">Cloud / Platform / Reliability</div><h1><span>MAKE</span><span class="outline">SYSTEMS</span><span>WORK.</span></h1></div><aside class="hero-aside"><img class="portrait" src="profile.jpg" alt="Portrait of Durgaprasad Sunkara"><p>I build and troubleshoot the infrastructure behind software, from Kubernetes deployments and delivery pipelines to observability, secrets and recovery.</p><div class="meta">DURGAPRASAD SUNKARA<br>DEVOPS / PLATFORM ENGINEERING<br>HAMBURG, DE</div><a class="resume-link" href="resume.pdf" download>DOWNLOAD MY RESUME <span aria-hidden="true">↓</span></a></aside></div><div class="hero-bottom"><span>Not a list of tools. A record of systems built, incidents investigated, and engineering decisions made.</span><a href="#systems">SCROLL TO INSPECT ↓</a></div></section>
 
-  <main id="top" class="shell">
-    <div class="hero">
-      <div class="eyebrow">Hamburg, Germany · Open to relocation</div>
-      <h1>Building reliable cloud-native platforms.</h1>
-      <p class="headline">Cloud &amp; Platform Engineer · Kubernetes · DevOps · Infrastructure Automation</p>
-      <p class="intro">DevOps / Platform Engineer with over 3 years of hands-on experience across Skillmine, Test Yantra and AIcoo GmbH. At AIcoo in Hamburg I own the DevOps environment end to end for an LLM-based coordinator platform, from the first Kubernetes manifests through CI/CD, secrets, monitoring and disaster recovery for development and staging environments.</p>
-      <p class="meta">Currently completing an MSc in Applied Data Science and Analytics at SRH Hamburg (expected 03/2027) and writing my master's thesis at AIcoo.</p>
-      <div class="actions">
-        <a class="button primary" href="#projects">Explore projects</a>
-        <a class="button" href="mailto:durgaprasadsunkara55@gmail.com">Email me</a>
-        <a class="button" href="https://www.linkedin.com/in/dpcloud" target="_blank" rel="noreferrer">LinkedIn</a>
-        <a class="button" href="https://github.com/sunkaradp" target="_blank" rel="noreferrer">GitHub</a>
-      </div>
-    </div>
+<section class="section wrap" id="systems"><div class="head"><div class="index">01 / SYSTEM MAP</div><div><h2 class="title">Infrastructure<br>is a product.</h2><p class="intro">A platform is more than a cluster. It is the path from a commit to a running service, and the controls that keep that path understandable when something breaks.</p></div></div>
+<div class="dark-panel"><div class="panel-head mono"><span>AIcoo coordinator / simplified delivery path</span><span>DOCUMENTED PLATFORM SCOPE</span></div><svg viewBox="0 0 1000 330" role="img" aria-label="Architecture diagram showing GitHub Actions, self-hosted runner, GHCR, Hetzner k3s, API, frontend, PostgreSQL, secrets and observability"><path class="wire" d="M150 92H260M390 92H500M630 92H760M565 132V205M825 132V205M825 270V305H565V270"/><path class="hotwire" d="M150 237H260M390 237H470V237H500M630 237H760"/><rect class="node" x="20" y="52" width="130" height="80"/><text x="85" y="84" text-anchor="middle">GITHUB</text><text class="sub" x="85" y="103" text-anchor="middle">Actions workflow</text><rect class="node" x="260" y="52" width="130" height="80"/><text x="325" y="84" text-anchor="middle">RUNNER</text><text class="sub" x="325" y="103" text-anchor="middle">self-hosted / k3s</text><rect class="node" x="500" y="52" width="130" height="80"/><text x="565" y="84" text-anchor="middle">GHCR</text><text class="sub" x="565" y="103" text-anchor="middle">container images</text><rect class="node" x="760" y="52" width="200" height="80"/><text x="860" y="84" text-anchor="middle">HETZNER CLOUD</text><text class="sub" x="860" y="103" text-anchor="middle">k3s deployment target</text><rect class="node" x="500" y="205" width="130" height="65"/><text x="565" y="232" text-anchor="middle">API</text><text class="sub" x="565" y="249" text-anchor="middle">FastAPI backend</text><rect class="node" x="760" y="205" width="130" height="65"/><text x="825" y="232" text-anchor="middle">WEB</text><text class="sub" x="825" y="249" text-anchor="middle">frontend</text><rect class="node" x="500" y="285" width="130" height="40"/><text x="565" y="310" text-anchor="middle">POSTGRESQL</text><rect class="hot" x="20" y="205" width="130" height="65"/><text x="85" y="232" text-anchor="middle">SEALED</text><text class="sub" x="85" y="249" text-anchor="middle">Secrets</text><rect class="hot" x="260" y="205" width="130" height="65"/><text x="325" y="232" text-anchor="middle">OBSERVE</text><text class="sub" x="325" y="249" text-anchor="middle">Prometheus / Grafana / Loki</text></svg><div class="legend">● Delivery and runtime components　 ● Security and observability concerns　 / Conceptual map, not live telemetry</div></div></section>
+<section class="section wrap" id="work"><div class="head"><div class="index">02 / SELECTED WORK</div><div><h2 class="title">Built, tested,<br>and explained.</h2><p class="intro">A selection of repositories. Each link leads to the implementation and its current scope.</p></div></div><div class="projects">
+<article class="project"><div class="num">01</div><div><h3><a href="https://github.com/sunkaradp/k3s-ai-remediation" target="_blank" rel="noreferrer">Kubernetes incident remediation</a></h3><p>An experiment in turning alert context into bounded operational actions. Signals from the cluster are mapped to predefined runbooks; policy and approval controls constrain what can execute. The model is not given unrestricted shell access.</p></div><div class="side">K3S / PROMETHEUS<br>ALERTMANAGER / LOKI<br>OLLAMA / FASTAPI<a href="https://github.com/sunkaradp/k3s-ai-remediation" target="_blank" rel="noreferrer">OPEN REPOSITORY ↗</a></div></article>
+<article class="project"><div class="num">02</div><div><h3><a href="https://github.com/sunkaradp/k8s-platform-intelligence" target="_blank" rel="noreferrer">Kubernetes platform intelligence</a></h3><p>A Kubernetes operator experiment that estimates node memory pressure from Prometheus time-series data and emits native Kubernetes warning events. The current implementation is observe-only, it reports signals rather than changing workloads.</p></div><div class="side">KUBERNETES OPERATOR<br>PROMETHEUS / PYTHON<br>CUSTOM RESOURCE<a href="https://github.com/sunkaradp/k8s-platform-intelligence" target="_blank" rel="noreferrer">OPEN REPOSITORY ↗</a></div></article>
+<article class="project"><div class="num">03</div><div><h3><a href="https://github.com/sunkaradp/k3s-devops-reference" target="_blank" rel="noreferrer">k3s DevOps reference</a></h3><p>A practical collection of deployment and operations notes covering containerization, cluster setup, CI/CD, secret handling, observability, database migrations and resource configuration.</p></div><div class="side">DOCKER / K3S<br>GITHUB ACTIONS / TERRAFORM<br>SEALED SECRETS / GRAFANA<a href="https://github.com/sunkaradp/k3s-devops-reference" target="_blank" rel="noreferrer">OPEN REPOSITORY ↗</a></div></article>
+<article class="project"><div class="num">04</div><div><h3><a href="https://github.com/sunkaradp/ev-charging-sessions" target="_blank" rel="noreferrer">EV charging sessions</a></h3><p>A data engineering project exploring event ingestion and analytics for electric-vehicle charging sessions.</p></div><div class="side">KAFKA / AIRFLOW<br>BIGQUERY / PYTHON<br>DATA PIPELINES<a href="https://github.com/sunkaradp/ev-charging-sessions" target="_blank" rel="noreferrer">OPEN REPOSITORY ↗</a></div></article><article class="project"><div class="num">05</div><div><h3>Cloud migration and monitoring</h3><p>Contributed as part of a dedicated team to migrating applications and data from DigitalOcean to CloudJiffy. Work included data-integrity checks, GitLab CI/CD workflow improvements, Kubernetes cluster deployment and Prometheus and Grafana monitoring integration.</p></div><div class="side">SKILLMINE / APR 2023 TO FEB 2024<br>GITLAB / KUBERNETES<br>GRAFANA / PROMETHEUS / TERRAFORM</div></article></div></section>
+<section class="section wrap" id="fieldnotes"><div class="head"><div class="index">03 / FIELD NOTES</div><div><h2 class="title">The interesting<br>part is the failure.</h2><p class="intro">Selected engineering problems from the AIcoo internship: what failed, what the evidence showed, and what changed.</p></div></div><div class="cases">
+<article class="case"><div class="num">CASE 001 / DATABASE RECOVERY</div><div><h3>Restore was not the finish line.</h3><p>A 158 MB database restore exposed 61 schema-drift errors. The recovery path required rebuilding the database and replaying migrations rather than treating a successful file restore as proof of service recovery.</p></div><div class="foot">Recovery process / migration consistency</div></article>
+<article class="case"><div class="num">CASE 002 / WORKLOAD STABILITY</div><div><h3>OOMKilled was a symptom.</h3><p>Crash loops were traced to CPU throttling during startup. Startup behavior, CPU limits and probe timing were reviewed together, then resource and startup settings were adjusted.</p></div><div class="foot">Diagnosis / resource sizing / startup probes</div></article>
+<article class="case"><div class="num">CASE 003 / DELIVERY PIPELINE</div><div><h3>Automation can break state.</h3><p>Two pipeline defects could delete runtime secrets and run migrations without the required configuration. The workflows were corrected to protect runtime configuration and make migration execution explicit.</p></div><div class="foot">GitHub Actions / secrets / migration jobs</div></article>
+<article class="case"><div class="num">CASE 004 / SECRET HANDLING</div><div><h3>Credentials need a lifecycle.</h3><p>After a secret exposure, the response included purging affected Git history, rotating keys and moving secret material into Sealed Secrets rather than relying on deletion from the latest file alone.</p></div><div class="foot">Incident response / rotation / Sealed Secrets</div></article></div></section>
+<section class="section wrap" id="experience"><div class="head"><div class="index">04 / EXPERIENCE</div><div><h2 class="title">Where the work<br>happened.</h2><p class="intro">Experience across platform operations, cloud infrastructure and applied data systems.</p></div></div><div class="timeline">
+<article class="role"><div class="date">OCT 2026 TO PRESENT<br>MASTER'S THESIS</div><div><h3>Master's Thesis</h3><div class="org">AIcoo GmbH, with SRH Hochschule Hamburg</div><ul><li>Developing a Docker-based MLOps-style pipeline for LLM-based extraction of project emails from the Enron corpus.</li><li>Exploring vector clustering, communication hierarchy and keyword-search approaches to identify project-related email collections.</li></ul></div></article>
+<article class="role"><div class="date">APR 2026 TO SEP 2026<br>20 HOURS / WEEK</div><div><h3>MLOps / DevOps Intern</h3><div class="org">AIcoo GmbH, Hamburg</div><ul><li>Contributed to the aicoo Coordinator infrastructure on Hetzner k3s: backend, frontend and PostgreSQL deployments configured with Kustomize.</li><li>Built GitHub Actions delivery workflows, moved builds to self-hosted runners inside k3s, published commit-level images to GHCR and added deployment checks.</li><li>Contributed to RAG infrastructure with Gemini and OpenAI embeddings and persistent PostgreSQL/pgvector storage.</li><li>Worked on Sealed Secrets, cert-manager TLS, Loki logging, dashboards, database migration jobs and disaster-recovery automation.</li><li>Documented deployment, rollback and recovery procedures; investigated cluster incidents and resource sizing.</li></ul></div></article>
+<article class="role"><div class="date">APR 2023 TO AUG 2024</div><div><h3>DevOps Engineer</h3><div class="org">Skillmine Technology Consulting · Bengaluru</div><ul><li>Modernized GitLab CI/CD pipelines, reducing deployment time by 30%.</li><li>Migrated applications and data from DigitalOcean to CloudJiffy with verified zero data loss.</li><li>Managed Kubernetes and Docker workloads and worked with Prometheus, Grafana and Loki.</li></ul></div></article>
+<article class="role"><div class="date">NOV 2021 TO FEB 2023<br>PROJECT FROM JUN 2022</div><div><h3>Junior DevOps Engineer</h3><div class="org">Test Yantra Software Solutions · Bengaluru</div><ul><li>Provisioned 15 AWS EC2 instances with Terraform, reducing setup time from two days to two hours.</li><li>Automated configuration with Ansible and supported CI/CD, Kubernetes and AWS operations.</li></ul></div></article>
+<article class="role"><div class="date">MAR 2020 TO SEP 2021</div><div><h3>Software Associate</h3><div class="org">Tech Mahindra</div></div></article></div></section>
+<section class="toolkit"><div class="wrap"><div class="head"><div class="index">05 / TOOLING</div><div><h2 class="title">Tools are the<br>material.</h2><p class="intro" style="color:#b9c0b5">A working toolkit, grouped by the engineering problems it helps solve.</p></div></div><div class="toolgrid">
+<div class="tool"><b>01 / Containers & orchestration</b><p>Kubernetes (k3s), Docker, Helm, Kustomize, OpenShift, Ingress</p></div><div class="tool"><b>02 / Cloud & infrastructure</b><p>Hetzner Cloud, AWS (EC2, IAM), GCP, Azure, Terraform, Ansible</p></div><div class="tool"><b>03 / Delivery</b><p>GitHub Actions, self-hosted runners, GitLab CI/CD, Jenkins, Argo CD, GHCR</p></div><div class="tool"><b>04 / Observability</b><p>Prometheus, Grafana, Loki, Promtail, alerting and operational dashboards</p></div><div class="tool"><b>05 / Data & AI systems</b><p>Python, FastAPI, PostgreSQL, pgvector, RAG workflows, Airflow, Kafka</p></div><div class="tool"><b>06 / Security & operations</b><p>Sealed Secrets, Trivy, Snyk, IAM, secret rotation, disaster recovery</p></div></div></div></section>
+<section class="section wrap"><div class="head"><div class="index">06 / RESEARCH</div><div><h2 class="title">From platform<br>to information.</h2></div></div><div class="thesis"><div><div class="eyebrow" style="color:var(--acid)">CURRENT / MASTER'S THESIS</div><h3 style="font-size:clamp(30px,4vw,52px);letter-spacing:-.06em;line-height:1.02;margin:12px 0 18px">Finding project structure inside a large email archive.</h3><p style="color:#55584f;max-width:600px">The thesis explores LLM-based extraction of project-related emails from the Enron corpus. The work compares vector clustering, communication hierarchy and keyword-search methods, with a Python and Docker-based pipeline and an LLM-generated wiki as an evaluation aid.</p><div class="meta" style="color:var(--muted)">AIcoo GmbH / SRH HOCHSCHULE HAMBURG / OCT 2026 TO PRESENT</div></div><div class="graphic"><div class="meta">Corpus → candidate groups → project context</div><div class="bars" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="meta">EMAIL CORPUS <span style="color:var(--acid)">/ PATTERN EXTRACTION ↗</span></div></div></div></section>
 
-    <section id="projects">
-      <div class="section-head">
-        <h2>Selected projects</h2>
-        <p class="section-note">A selection of platform engineering, Kubernetes and data projects.</p>
-      </div>
-      <div class="grid">
-        <article class="card">
-          <h3><a href="https://github.com/sunkaradp/k3s-ai-remediation" target="_blank" rel="noreferrer">Kubernetes Incident Remediation</a></h3>
-          <p>Explores policy-controlled incident diagnosis for k3s. Alert context is analysed and mapped to predefined runbooks; execution remains bounded by explicit policy and approval controls.</p>
-          <div class="tags"><span class="tag">k3s</span><span class="tag">Prometheus</span><span class="tag">Loki</span><span class="tag">FastAPI</span><span class="tag">Ollama</span></div>
-        </article>
-        <article class="card">
-          <h3><a href="https://github.com/sunkaradp/k8s-platform-intelligence" target="_blank" rel="noreferrer">Kubernetes Platform Intelligence</a></h3>
-          <p>A Kubernetes operator experiment that estimates node memory pressure from Prometheus metrics and reports warnings through native Kubernetes events. The current workflow is observe-only.</p>
-          <div class="tags"><span class="tag">Kubernetes Operator</span><span class="tag">Prometheus</span><span class="tag">Python</span><span class="tag">CRDs</span></div>
-        </article>
-        <article class="card">
-          <h3><a href="https://github.com/sunkaradp/k3s-devops-reference" target="_blank" rel="noreferrer">k3s DevOps Reference</a></h3>
-          <p>A practical reference for containerization, k3s deployment, CI/CD, secret management, observability and operational workflows.</p>
-          <div class="tags"><span class="tag">Docker</span><span class="tag">k3s</span><span class="tag">GitHub Actions</span><span class="tag">Terraform</span></div>
-        </article>
-        <article class="card">
-          <h3><a href="https://github.com/sunkaradp/ev-charging-sessions" target="_blank" rel="noreferrer">EV Charging Sessions</a></h3>
-          <p>A data engineering project exploring event ingestion and analytics for EV charging session data.</p>
-          <div class="tags"><span class="tag">Kafka</span><span class="tag">Airflow</span><span class="tag">BigQuery</span><span class="tag">Python</span></div>
-        </article>
-        <article class="card">
-          <h3><a href="https://github.com/sunkaradp/ecommerce-sales-forecasting-pipeline" target="_blank" rel="noreferrer">E-commerce Sales Forecasting</a></h3>
-          <p>A collaborative forecasting pipeline project. My documented contributions include Docker orchestration and MongoDB integration.</p>
-          <div class="tags"><span class="tag">Python</span><span class="tag">Docker</span><span class="tag">MongoDB</span><span class="tag">Forecasting</span></div>
-        </article>
-        <article class="card">
-          <h3><a href="https://github.com/sunkaradp/MoodSyncAI" target="_blank" rel="noreferrer">MoodSyncAI</a></h3>
-          <p>An applied AI project exploring mood-aware recommendations.</p>
-          <div class="tags"><span class="tag">Python</span><span class="tag">Machine Learning</span><span class="tag">AI</span></div>
-        </article>
-      </div>
-    </section>
+<section class="section wrap" id="writing">
+  <div class="head"><div class="index">07 / WRITING & CREDENTIALS</div><div><h2 class="title">Ideas, then<br>evidence.</h2><p class="intro">A few ways I keep learning and share what I find useful.</p></div></div>
+  <div class="projects">
+    <article class="project"><div class="num">01</div><div><h3><a href="https://medium.com/@durgaprasadsunkara55/how-german-startups-cut-project-management-costs-using-ai-agents-cfc970ee6d43" target="_blank" rel="noreferrer">How German startups cut project management costs using AI agents</a></h3><p>Writing on practical AI-agent use in project management and the potential to reduce coordination overhead.</p></div><div class="side">MEDIUM / ARTICLE<a href="https://medium.com/@durgaprasadsunkara55/how-german-startups-cut-project-management-costs-using-ai-agents-cfc970ee6d43" target="_blank" rel="noreferrer">READ ARTICLE ↗</a></div></article>
+  </div>
+  <div class="toolgrid" style="margin-top:28px">
+    <div class="tool" style="border-color:var(--line)"><b style="color:var(--acid)">ANTHROPIC / NOV 2026</b><p style="color:var(--ink)">Claude Academy: Introduction to evals<br><span class="meta">Credential ID: ca6dbd9931ac3f8128359517709c29b0</span></p></div>
+    <div class="tool" style="border-color:var(--line)"><b style="color:var(--acid)">ANTHROPIC / NOV 2026</b><p style="color:var(--ink)">Claude Academy: Claude 101<br><span class="meta">Credential ID: 0cc454b80a279388ac736746e3403018</span></p></div>
+    <div class="tool" style="border-color:var(--line)"><b style="color:var(--acid)">SAP / OCT 2026</b><p style="color:var(--ink)">Introducing Joule Studio</p></div>
+    <div class="tool" style="border-color:var(--line)"><b style="color:var(--acid)">NVIDIA / JAN 2025</b><p style="color:var(--ink)">Transformer-Based Natural Language Processing<br><span class="meta">Credential ID: He2KfYSaRj28w6FgPx1-aA</span></p></div>
+    <div class="tool" style="border-color:var(--line)"><b style="color:var(--acid)">LINKEDIN LEARNING</b><p style="color:var(--ink)">Docker</p></div>
+    <div class="tool" style="border-color:var(--line)"><b style="color:var(--acid)">LINKEDIN LEARNING</b><p style="color:var(--ink)">Git Workflow</p></div>
+  </div>
+</section>
+<section class="section wrap" id="recommendations">
+  <div class="head"><div class="index">08 / RECOMMENDATIONS</div><div><h2 class="title">Good work is<br>collaborative.</h2><p class="intro">A few words shared by people I have worked with.</p></div></div>
+  <div class="cases">
+    <article class="case"><div class="num">AJAY KUMAR / EPAM SYSTEMS</div><div><h3>“Reliable ownership and practical problem-solving.”</h3><p>Ajay highlighted my technical proficiency across DevOps, cloud infrastructure, Kubernetes and AWS, along with reliability, collaboration and willingness to learn.</p></div><div class="foot">Managed me directly / AUGUST 2026</div></article>
+    <article class="case"><div class="num">VARUN POLAMPALLI</div><div><h3>“A proactive teammate.”</h3><p>Varun noted my Kubernetes and monitoring knowledge, proactive approach to problem-solving and willingness to support teammates and share knowledge.</p></div><div class="foot">Worked at Test Yantra / OCTOBER 2024</div></article>
+    <article class="case"><div class="num">BHARATHESH</div><div><h3>“Committed to improving how teams deliver.”</h3><p>Bharathesh recognized my DevOps skills, commitment, communication and contribution to improving workflows and delivery timelines.</p></div><div class="foot">Worked on different teams / MAY 2024</div></article>
+  </div>
+</section>
 
-    <section id="experience">
-      <div class="section-head">
-        <h2>Experience</h2>
-        <p class="section-note">DevOps and platform work across startup and consulting environments.</p>
-      </div>
-      <div class="timeline">
-        <article class="role">
-          <div class="date">Apr 2026 – Present</div>
-          <div>
-            <h3>DevOps / Platform Engineer</h3>
-            <div class="company">AIcoo GmbH · Hamburg</div>
-            <ul>
-              <li>Own the DevOps environment for the coordinator platform (FastAPI backend, frontend and PostgreSQL) on k3s hosted by Hetzner Cloud.</li>
-              <li>Built the Kubernetes configuration with Kustomize: 28 manifests, development and staging overlays, Deployments and a PostgreSQL StatefulSet.</li>
-              <li>Built GitHub Actions CI/CD with a self-hosted runner to build images, publish to GHCR, run database migrations and deploy to development and staging.</li>
-              <li>Introduced Sealed Secrets for encrypted secret storage in Git; removed exposed credentials from Git history and rotated them.</li>
-              <li>Deployed Prometheus, Grafana, Loki and Promtail for metrics, dashboards and logs.</li>
-              <li>Wrote and tested disaster recovery covering Kubernetes manifests, the Sealed Secrets key, PostgreSQL and the repository.</li>
-              <li>Resolved operational issues involving crash-looping pods, image pulls, database credentials and migrations; fixed deployment workflow bugs.</li>
-              <li>Integrated more than 100 commits from master into the DevOps branch while preserving deployment stability; maintain documentation, runbooks and resource naming/tagging conventions.</li>
-              <li>Since October 2026, developing a Docker-based MLOps-style pipeline for LLM extraction of project emails from the Enron corpus as part of the master's thesis.</li>
-            </ul>
-          </div>
-        </article>
-        <article class="role">
-          <div class="date">Apr 2023 – Aug 2024</div>
-          <div>
-            <h3>DevOps Engineer</h3>
-            <div class="company">Skillmine Technology Consulting · Bengaluru</div>
-            <ul>
-              <li>Improved GitLab CI/CD pipelines, reducing deployment time by 30%.</li>
-              <li>Migrated applications and data from DigitalOcean to CloudJiffy.</li>
-              <li>Managed Kubernetes workloads, Docker images, services, ConfigMaps and Ingress.</li>
-              <li>Implemented logging and monitoring with Prometheus, Grafana and Loki.</li>
-            </ul>
-          </div>
-        </article>
-        <article class="role">
-          <div class="date">Nov 2021 – Feb 2023</div>
-          <div>
-            <h3>DevOps Engineer</h3>
-            <div class="company">Test Yantra · Bengaluru</div>
-            <ul>
-              <li>Automated provisioning of 15 EC2 servers with Terraform, reducing setup time from two days to two hours.</li>
-              <li>Automated server configuration with Ansible and supported CI/CD and Kubernetes workloads.</li>
-              <li>Supported AWS infrastructure operations and cost tracking.</li>
-            </ul>
-          </div>
-        </article>
-        <article class="role">
-          <div class="date">Mar 2020 – Sep 2021</div>
-          <div>
-            <h3>Software Associate</h3>
-            <div class="company">Tech Mahindra</div>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section id="skills">
-      <div class="section-head">
-        <h2>Technical areas</h2>
-        <p class="section-note">Tools and platforms used across work and personal projects.</p>
-      </div>
-      <div class="skills">
-        <div class="skill"><strong>Containers &amp; orchestration</strong><span>Kubernetes (k3s), Docker, Helm, Kustomize, OpenShift</span></div>
-        <div class="skill"><strong>Cloud &amp; infrastructure</strong><span>AWS, Azure, GCP, Hetzner Cloud, Terraform, IAM</span></div>
-        <div class="skill"><strong>CI/CD &amp; delivery</strong><span>GitHub Actions, Jenkins, Argo CD, GitLab CI, self-hosted runners</span></div>
-        <div class="skill"><strong>Observability</strong><span>Prometheus, Grafana, Loki, Promtail</span></div>
-        <div class="skill"><strong>Data &amp; ML infrastructure</strong><span>PostgreSQL, pgvector, RAG pipelines, Docker, LLM extraction</span></div>
-        <div class="skill"><strong>Tools &amp; operations</strong><span>PowerShell, Jira, Sealed Secrets, disaster recovery, runbooks</span></div>
-      </div>
-    </section>
-
-    <section>
-      <div class="section-head">
-        <h2>Current learning</h2>
-      </div>
-      <div class="now">
-        <strong>MSc Applied Data Science and Analytics · SRH Hochschule Hamburg</strong>
-        <p>Expected completion: March 2027. Master's thesis at AIcoo (since October 2026): building a Docker-based, MLOps-style data pipeline for LLM-based extraction of project emails from the Enron corpus.</p>
-      </div>
-    </section>
-
-    <section id="contact">
-      <div class="section-head">
-        <h2>Let’s connect</h2>
-        <p class="section-note">Open to DevOps, Platform Engineering, Cloud and SRE opportunities in Germany and the Netherlands.</p>
-      </div>
-      <p><a href="mailto:durgaprasadsunkara55@gmail.com">durgaprasadsunkara55@gmail.com</a> · <a href="https://www.linkedin.com/in/dpcloud" target="_blank" rel="noreferrer">LinkedIn</a> · <a href="https://github.com/sunkaradp" target="_blank" rel="noreferrer">GitHub</a></p>
-    </section>
-  </main>
-
-  <footer>
-    <div class="shell">
-      <span>© 2026 Durgaprasad Sunkara</span>
-      <span>Built with HTML and CSS · Hamburg, Germany</span>
-    </div>
-  </footer>
-</body>
-</html>
+<section class="contact" id="contact"><div class="wrap"><div class="eyebrow" style="color:#ffe0d8">07 / CONTACT</div><h2>LET'S BUILD<br>WHAT'S NEXT.</h2><div class="contact-row"><div class="contact-meta">HAMBURG, GERMANY<br>OPEN TO RELOCATION<br>DEVOPS / PLATFORM / CLOUD / SRE</div><div><a href="mailto:durgaprasadsunkara55@gmail.com">Email ↗</a><a href="https://www.linkedin.com/in/dpcloud" target="_blank" rel="noreferrer">LinkedIn ↗</a><a href="https://github.com/sunkaradp" target="_blank" rel="noreferrer">GitHub ↗</a></div></div></div></section>
+</main>
+<footer><div class="wrap footrow"><span>© 2026 DURGAPRASAD SUNKARA</span><span>ENGINEERING FIELD NOTES / HAMBURG</span><a href="#top">BACK TO TOP ↑</a></div></footer>
+</body></html>
