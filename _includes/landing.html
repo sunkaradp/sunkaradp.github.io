@@ -11,7 +11,7 @@
 .ph-actions a{padding:11px 18px;border:1px solid #263746;border-radius:4px;font-size:13px;font-weight:650;text-decoration:none}
 .ph-actions .primary{background:#263746;color:white}
 .ph-head{text-align:center;margin-bottom:30px}.ph-head h2{font-size:29px;letter-spacing:-.04em;font-weight:750;margin:7px 0}.ph-head p{font-size:13px;color:var(--bs-secondary-color,#6b7480)}
-.ph-about{display:grid;grid-template-columns:1.15fr .85fr;gap:20px}
+.ph-about{display:grid;grid-template-columns:1.15fr .85fr;gap:20px}.ph-about-photo{display:grid;grid-template-columns:190px 1fr;gap:22px;align-items:start}.ph-about-photo img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center 28%;border-radius:6px;border:1px solid rgba(120,130,140,.3)}
 .ph-panel,.ph-project,.ph-skill,.ph-edu{border:1px solid rgba(120,130,140,.3);border-radius:8px;padding:23px;background:var(--bs-body-bg,#fff)}
 .ph-panel p{font-size:13px;line-height:1.8;color:var(--bs-secondary-color,#5f6873)}
 .ph-focus{display:grid;gap:12px}.ph-focus div{padding-bottom:12px;border-bottom:1px solid rgba(120,130,140,.2)}.ph-focus div:last-child{border:0;padding:0}.ph-focus strong{display:block;font-size:13px}.ph-focus span{font-size:12px;color:var(--bs-secondary-color,#68727d)}
@@ -19,13 +19,13 @@
 .ph-role{position:relative;padding:0 0 27px}.ph-role:before{content:"";position:absolute;left:-35px;top:4px;width:12px;height:12px;border-radius:50%;background:#637b8e;border:3px solid var(--bs-body-bg,#fff);box-shadow:0 0 0 1px #637b8e}
 .ph-role h3{font-size:16px;font-weight:700;margin:0 0 4px}.ph-meta{font-size:12px;color:#718096;margin-bottom:8px}.ph-role p{font-size:13px;line-height:1.7;color:var(--bs-secondary-color,#66717c);margin:0}
 .ph-projects{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px}
-.ph-project{display:flex;flex-direction:column;min-height:220px;padding:21px}.ph-project .tag{font:600 10px ui-monospace,monospace;letter-spacing:.1em;color:#718096;text-transform:uppercase}
+.ph-project{display:flex;flex-direction:column;min-height:220px;padding:0;overflow:hidden}.ph-project-body{display:flex;flex-direction:column;flex:1;padding:21px}.ph-project-image{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;border-bottom:1px solid rgba(120,130,140,.25)}.ph-project .tag{font:600 10px ui-monospace,monospace;letter-spacing:.1em;color:#718096;text-transform:uppercase}
 .ph-project h3{font-size:18px;font-weight:720;margin:13px 0 8px}.ph-project p{font-size:13px;line-height:1.65;color:var(--bs-secondary-color,#66717c);margin:0 0 12px}
 .ph-tech{font-size:11px;color:#718096;margin-bottom:16px}.ph-links{display:flex;gap:16px;margin-top:auto}.ph-links a{font-size:12px;font-weight:650;text-decoration:none}
 .ph-skills{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}.ph-skill{padding:18px}.ph-skill h3{font-size:14px;font-weight:700;margin:0 0 9px}.ph-skill p{font-size:12px;line-height:1.7;color:var(--bs-secondary-color,#66717c);margin:0}
 .ph-education{max-width:850px;margin:auto}.ph-edu{margin-bottom:12px}.ph-edu strong{font-size:14px}.ph-edu span{display:block;font-size:12px;color:#718096;margin-top:5px}
 .ph-end{text-align:center;border-top:1px solid rgba(120,130,140,.3);margin-top:45px;padding-top:35px}.ph-end h2{font-size:26px;letter-spacing:-.04em}.ph-end p{font-size:13px;color:var(--bs-secondary-color,#66717c)}
-@media(max-width:720px){.ph-home{padding:10px 16px 50px}.ph-home section{padding:43px 0 12px}.ph-hero{min-height:68vh}.ph-about,.ph-projects,.ph-skills{grid-template-columns:1fr}.ph-head h2{font-size:25px}}
+@media(max-width:720px){.ph-home{padding:10px 16px 50px}.ph-home section{padding:43px 0 12px}.ph-hero{min-height:68vh}.ph-about,.ph-projects,.ph-skills{grid-template-columns:1fr}.ph-about-photo{grid-template-columns:112px 1fr;gap:14px}.ph-head h2{font-size:25px}}
 </style>
 <main class="ph-home">
 <section class="ph-hero" id="home">
@@ -36,10 +36,10 @@
 <div class="ph-actions"><a class="primary" href="{{ '/resume.pdf' | relative_url }}">Download résumé ↗</a><a href="#projects">Explore projects ↓</a></div>
 </section>
 <section id="about"><div class="ph-head"><div class="ph-label">A little about me</div><h2>Engineering with an operational mindset.</h2><p>Building systems that are understandable, repeatable and reliable.</p></div>
-<div class="ph-about"><div class="ph-panel">
+<div class="ph-about"><div class="ph-panel ph-about-photo"><img src="{{ '/profile.jpg' | relative_url }}" alt="Portrait of Durgaprasad Sunkara" loading="lazy"><div>
 <p>I’m a DevOps and Platform Engineer with 3+ years of experience across cloud and infrastructure engineering. At AIcoo GmbH in Hamburg, I built the DevOps environment for an LLM-based product with a FastAPI backend, frontend and PostgreSQL, running on k3s at Hetzner Cloud.</p>
 <p>My work included Kubernetes configuration with Kustomize, development and staging environments, GitHub Actions CI/CD with a self-hosted runner, GHCR image delivery, secrets management, monitoring and recovery planning.</p>
-<p>Previously, I worked at Skillmine, Test Yantra and Tech Mahindra. I’m completing an MSc in Applied Data Science and Analytics at SRH University Hamburg, with my thesis research underway.</p></div>
+<p>Previously, I worked at Skillmine, Test Yantra and Tech Mahindra. I’m completing an MSc in Applied Data Science and Analytics at SRH University Hamburg, with my thesis research underway.</p></div></div>
 <div class="ph-panel ph-focus">
 <div><strong>Platform &amp; orchestration</strong><span>Kubernetes · k3s · Docker · Helm · Kustomize</span></div>
 <div><strong>Cloud &amp; infrastructure</strong><span>AWS · Hetzner Cloud · Terraform · Ansible</span></div>
@@ -49,7 +49,7 @@
 <section id="experience"><div class="ph-head"><div class="ph-label">Career path</div><h2>Experience</h2><p>Roles across software, cloud and platform engineering.</p></div>
 <div class="ph-timeline">{% for item in site.data.timeline %}<article class="ph-role"><h3>{{ item.title }}</h3><div class="ph-meta">{{ item.from }} — {{ item.to }}</div><p>{{ item.description }}</p></article>{% endfor %}</div></section>
 <section id="projects"><div class="ph-head"><div class="ph-label">Selected work</div><h2>Projects</h2><p>Practical engineering, interactive demonstrations and research.</p></div>
-<div class="ph-projects">{% assign ordered_projects = site.projects | sort: "weight" %}{% for project in ordered_projects %}<article class="ph-project"><div class="tag">{{ project.preview_label | default: "Project" }}</div><h3>{{ project.name }}</h3><p>{{ project.description }}</p><div class="ph-tech">{{ project.tools | join: " · " }}</div><div class="ph-links">{% if project.demo %}<a href="{{ project.demo }}" target="_blank" rel="noopener">Live demo ↗</a>{% endif %}{% if project.repo %}<a href="{{ project.repo }}" target="_blank" rel="noopener">Source code ↗</a>{% endif %}</div></article>{% endfor %}</div></section>
+<div class="ph-projects">{% assign ordered_projects = site.projects | sort: "weight" %}{% for project in ordered_projects %}{% assign shot = project.image %}{% if project.name == "Kubernetes Platform Intelligence" %}{% assign shot = "/assets/images/projects/k8s-platform-intelligence.webp" %}{% elsif project.name == "k3s DevOps Reference" %}{% assign shot = "/assets/images/projects/k3s-devops-reference.webp" %}{% elsif project.name == "EV Charging Analytics" %}{% assign shot = "/assets/images/projects/ev-charging.webp" %}{% elsif project.name == "E-Commerce Sales Forecasting" %}{% assign shot = "/assets/images/projects/ecommerce-forecast.webp" %}{% endif %}<article class="ph-project">{% if shot %}<a href="{{ project.demo | default: project.repo }}" target="_blank" rel="noopener"><img class="ph-project-image" src="{{ shot | relative_url }}" alt="Screenshot of {{ project.name }}" loading="lazy"></a>{% endif %}<div class="ph-project-body"><div class="tag">{{ project.preview_label | default: "Project" }}</div><h3>{{ project.name }}</h3><p>{{ project.description }}</p><div class="ph-tech">{{ project.tools | join: " · " }}</div><div class="ph-links">{% if project.demo %}<a href="{{ project.demo }}" target="_blank" rel="noopener">Live demo ↗</a>{% endif %}{% if project.repo %}<a href="{{ project.repo }}" target="_blank" rel="noopener">Source code ↗</a>{% endif %}</div></div></article>{% endfor %}</div></section>
 <section id="skills"><div class="ph-head"><div class="ph-label">Technical toolkit</div><h2>Skills</h2><p>Tools used in engineering work and projects.</p></div>
 <div class="ph-skills">
 <div class="ph-skill"><h3>Containers &amp; Kubernetes</h3><p>Kubernetes, k3s, Docker, Helm, Kustomize, RBAC, StatefulSets</p></div>
