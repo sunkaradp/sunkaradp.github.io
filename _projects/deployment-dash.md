@@ -3,6 +3,7 @@ name: Deployment Dash Intelligence
 tools: [Kubernetes, YAML, Python, FastAPI, React, TypeScript, Kubescape]
 description: Read-only Kubernetes manifest analysis that explains deployment and container-security risks before release.
 repo: https://github.com/sunkaradp/deployment-dash-intelligence
+image: /assets/images/projects/deployment-dash.webp
 preview_label: MANIFEST REVIEW
 preview: "Kubernetes YAML|Policy checks|Risk findings"
 preview_note: "Deterministic checks · advisory only"
