@@ -1,0 +1,49 @@
+title: Durgaprasad Sunkara
+description: >-
+  DevOps and Platform Engineer in Hamburg, Germany. Working across Kubernetes,
+  cloud infrastructure, CI/CD, observability and reliable software delivery.
+url: "https://sunkaradp.github.io"
+baseurl: ""
+repository: sunkaradp/sunkaradp.github.io
+remote_theme: YoussefRaafatNasry/portfolYOU
+open_new_tab: true
+
+plugins:
+  - jemoji
+  - jekyll-remote-theme
+
+nav_exclude:
+  - pages/index.md
+  - pages/404.html
+  - pages/tags.html
+
+author:
+  name: Durgaprasad Sunkara
+  image: https://sunkaradp.github.io/profile.jpg
+  email: durgaprasadsunkara55@gmail.com
+  github: sunkaradp
+  linkedin: dpcloud
+
+permalink: /blog/:title
+
+collections:
+  projects:
+    output: true
+    permalink: /projects/:name
+
+defaults:
+  - scope:
+      path: ""
+      type: projects
+    values:
+      layout: page
+  - scope:
+      path: ""
+      type: posts
+    values:
+      comments: false
+
+exclude:
+  - README.md
+  - LICENSE
+  - "*.log"
