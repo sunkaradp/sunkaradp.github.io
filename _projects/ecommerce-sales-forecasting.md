@@ -4,6 +4,7 @@ weight: 8
 tools: [Apache Airflow, Python, Prophet, MongoDB, Flask, Docker]
 description: Collaborative pipeline for transaction preparation, 30-day revenue forecasting and a small dashboard.
 repo: https://github.com/sunkaradp/ecommerce-sales-forecasting-pipeline
+demo: https://sunkaradp.github.io/ecommerce-forecast-demo/
 preview_label: FORECAST PIPELINE
 preview: "Transaction data|Airflow ETL|30-day forecast"
 preview_note: "Collaborative project"
