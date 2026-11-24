@@ -1,4 +1,5 @@
 ---
+image: /assets/images/projects/k8s-platform-intelligence.webp
 name: Kubernetes Platform Intelligence
 weight: 4
 tools: [Kubernetes, Prometheus, Python, Helm, CRD]
