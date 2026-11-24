@@ -1,5 +1,6 @@
 ---
 image: /assets/images/projects/k3s-devops-reference.webp
+image: /assets/images/projects/k3s-devops-reference.webp
 name: k3s DevOps Reference
 weight: 5
 tools: [Kubernetes, k3s, Docker, Kustomize, CI/CD]
