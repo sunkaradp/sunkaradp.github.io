@@ -1,4 +1,5 @@
 ---
+image: /assets/images/projects/k3s-ai-remediation.webp
 name: Kubernetes AI Remediation
 weight: 3
 tools: [Python, FastAPI, Kubernetes, RBAC, Kustomize, Prometheus, Loki]
