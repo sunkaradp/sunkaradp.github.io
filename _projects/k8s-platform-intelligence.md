@@ -4,6 +4,8 @@ weight: 4
 tools: [Kubernetes, Prometheus, Python, Helm, CRD]
 description: An observe-only operator experiment that estimates node memory pressure from Prometheus metrics and emits Kubernetes Warning Events.
 repo: https://github.com/sunkaradp/k8s-platform-intelligence
+demo: https://sunkaradp.github.io/k8s-platform-intelligence-demo/
+image: /assets/images/projects/k8s-platform-intelligence.webp
 preview_label: NODE HEALTH SIGNAL
 preview: "Prometheus metrics|Trend estimate|Kubernetes Event"
 preview_note: "Observe-only · Minikube tested"
