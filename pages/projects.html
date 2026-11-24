@@ -5,4 +5,33 @@ permalink: /projects/
 weight: 1
 ---
 
-{% include projects/index.html %}
+<div class="container">
+  <div class="row">
+    {% assign ordered_projects = site.projects | sort: "weight" %}
+    {% for project in ordered_projects %}
+      <div class="col-lg-6 mb-4">
+        <article class="card h-100">
+          {% if project.image %}
+            <img src="{{ project.image | relative_url }}" class="card-img-top" alt="{{ project.name }}" style="max-height: 220px; object-fit: cover;">
+          {% endif %}
+          <div class="card-body d-flex flex-column">
+            <h4 class="card-title">{{ project.name }}</h4>
+            <p class="card-text text-muted">{{ project.description }}</p>
+            {% if project.tools %}
+              <p class="small mb-3">{{ project.tools | join: " · " }}</p>
+            {% endif %}
+            <div class="mt-auto d-flex flex-wrap align-items-center" style="gap: 10px;">
+              {% if project.demo %}
+                <a class="btn btn-sm btn-primary" href="{{ project.demo }}" target="_blank" rel="noopener">Live demo ↗</a>
+              {% endif %}
+              <a class="btn btn-sm btn-outline-primary" href="{{ project.url | relative_url }}">Case study ↗</a>
+              {% if project.repo %}
+                <a class="btn btn-sm btn-outline-secondary" href="{{ project.repo }}" target="_blank" rel="noopener">GitHub ↗</a>
+              {% endif %}
+            </div>
+          </div>
+        </article>
+      </div>
+    {% endfor %}
+  </div>
+</div>
