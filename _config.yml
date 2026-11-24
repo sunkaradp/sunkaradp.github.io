@@ -1,13 +1,14 @@
 title: Durgaprasad Sunkara
 description: >-
-  DevOps and Platform Engineer based in Hamburg, Germany. I build and operate
-  Kubernetes platforms, cloud infrastructure and reliable delivery workflows.
-  Currently completing an MSc in Applied Data Science and Analytics at SRH University.
+  DevOps and Platform Engineer from Hamburg, Germany. I build and operate
+  cloud-native platforms, automate infrastructure and CI/CD, and focus on
+  reliability and observability. I am completing an MSc in Applied Data Science
+  and Analytics at SRH University, Hamburg, Germany.
 url: "https://sunkaradp.github.io"
 baseurl: ""
 repository: sunkaradp/sunkaradp.github.io
 remote_theme: YoussefRaafatNasry/portfolYOU
-open_new_tab: true
+open_new_tab: false
 
 plugins:
   - jemoji

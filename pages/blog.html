@@ -1,49 +1,9 @@
 ---
 layout: default
 title: Blog
-permalink: /blog/
 weight: 2
-description: Technical writing and engineering notes by Durgaprasad Sunkara.
+permalink: /blog/
 ---
-<section class="page-heading">
-  <h1>Writing</h1>
-  <p>Notes from building, debugging and operating software systems.</p>
-</section>
-<div class="blog-list">
-  <article class="blog-card">
-    <div class="blog-source">Medium · March 2026</div>
-    <h2>How German Startups Cut Project Management Costs Using AI Agents</h2>
-    <p>A case study on turning unstructured project emails into structured risk intelligence through staged LLM processing, JSON validation, PostgreSQL persistence and audit trails. Developed as a university–industry collaboration; team contributions are described in the article.</p>
-    <a href="https://medium.com/@durgaprasadsunkara55/how-german-startups-cut-project-management-costs-using-ai-agents-cfc970ee6d43" target="_blank" rel="noopener">Read on Medium ↗</a>
-  </article>
-  <article class="blog-card">
-    <div class="blog-source">LinkedIn · Kubernetes</div>
-    <h2>When OOMKilled Wasn't a Memory Problem</h2>
-    <p>A debugging note about a crashing backend pod: CPU throttling during startup, a startupProbe, and the difference between an error symptom and its root cause.</p>
-    <a href="https://www.linkedin.com/posts/dpcloud_spent-a-couple-of-hours-convinced-i-had-a-activity-7478033992005505024-XoGr" target="_blank" rel="noopener">Read on LinkedIn ↗</a>
-  </article>
-  <article class="blog-card">
-    <div class="blog-source">LinkedIn · Terraform</div>
-    <h2>Terraform State Is Part of the Production Surface</h2>
-    <p>Why remote state, locking, access control, encryption and drift handling should be design decisions—not cleanup work after infrastructure has already grown.</p>
-    <a href="https://www.linkedin.com/in/dpcloud/" target="_blank" rel="noopener">Find the post on LinkedIn ↗</a>
-  </article>
-  <article class="blog-card">
-    <div class="blog-source">LinkedIn · PostgreSQL</div>
-    <h2>Restoring a Backup When the Schema Has Moved On</h2>
-    <p>A practical lesson from a PostgreSQL restore: an old schema can turn a restore into a migration, even when the dump itself is valid.</p>
-    <a href="https://www.linkedin.com/in/dpcloud/" target="_blank" rel="noopener">Find the post on LinkedIn ↗</a>
-  </article>
-  <article class="blog-card">
-    <div class="blog-source">LinkedIn · Kubernetes</div>
-    <h2>Predicting Node Memory Pressure Before Evictions</h2>
-    <p>An observe-only Kubernetes operator experiment using Prometheus memory metrics, a rolling regression estimate and native Warning Events.</p>
-    <a href="https://www.linkedin.com/in/dpcloud/" target="_blank" rel="noopener">Find the post on LinkedIn ↗</a>
-  </article>
-  <article class="blog-card">
-    <div class="blog-source">LinkedIn · Data Engineering</div>
-    <h2>Building an EV Charging Analytics Pipeline</h2>
-    <p>A collaborative project covering Kafka event ingestion, Airflow batch transformations and cloud analytics concepts, with individual contributions documented in the repository.</p>
-    <a href="https://www.linkedin.com/in/dpcloud/" target="_blank" rel="noopener">Find the post on LinkedIn ↗</a>
-  </article>
-</div>
+
+{% include blog/search.html %}
+{% include blog/index.html %}
