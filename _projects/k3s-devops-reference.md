@@ -1,7 +1,6 @@
 ---
 name: k3s DevOps Reference
 tools: [Kubernetes, k3s, Docker, Kustomize, CI/CD]
-image: ""
 description: A practical reference for repeatable Kubernetes and DevOps setup.
 ---
 
