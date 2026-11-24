@@ -1,8 +1,13 @@
+# Font Awesome icons and brand colors used by the portfolYOU theme.
+email:
+  url: "mailto:"
+  icon: "fas fa-envelope"
+  color: "db4437"
 github:
-  url: https://github.com/
+  url: "https://github.com/"
   icon: "fab fa-github"
   color: "333333"
 linkedin:
-  url: https://www.linkedin.com/
-  icon: "fab fa-linkedin"
+  url: "https://www.linkedin.com/in/"
+  icon: "fab fa-linkedin-in"
   color: "0077b5"
