@@ -1,7 +1,6 @@
 ---
 name: Kubernetes Platform Intelligence
 tools: [Kubernetes, Prometheus, Python, Helm]
-image: ""
 description: An observe-only operator experiment for early node memory pressure signals.
 ---
 
