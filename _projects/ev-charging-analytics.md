@@ -1,4 +1,5 @@
 ---
+image: /assets/images/projects/ev-charging.webp
 name: EV Charging Analytics
 weight: 7
 tools: [Kafka, Python, Apache Airflow, Docker, Data Engineering]
