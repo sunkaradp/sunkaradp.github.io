@@ -1,4 +1,5 @@
 ---
+image: /assets/images/projects/ecommerce-forecast.webp
 name: E-Commerce Sales Forecasting
 weight: 8
 tools: [Apache Airflow, Python, Prophet, MongoDB, Flask, Docker]
