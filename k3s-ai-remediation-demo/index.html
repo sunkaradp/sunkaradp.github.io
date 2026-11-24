@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#0b1118">
+<title>Kubernetes AI Remediation — Interactive Demo</title>
+<style>
+:root{color-scheme:dark;--bg:#0b1118;--panel:#111c27;--panel2:#152331;--line:#243545;--muted:#91a4b7;--text:#e8eff5;--green:#72d6ad;--amber:#f2bd68;--red:#f17f7f;--blue:#8db9ed}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 78% 0%,#17313a 0,transparent 34%),var(--bg);color:var(--text);font:15px/1.55 Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,sans-serif}
+a{color:var(--blue);text-decoration:none}a:hover{text-decoration:underline}.wrap{max-width:1180px;margin:auto;padding:26px 28px 60px}
+header{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line);padding:4px 0 22px}.brand{font-weight:750;letter-spacing:-.03em;font-size:18px}.brand small{display:block;color:var(--muted);font-size:10px;letter-spacing:.16em;text-transform:uppercase;font-weight:600}.nav{display:flex;gap:20px;color:var(--muted);font-size:13px}
+.hero{padding:54px 0 34px;max-width:760px}.eyebrow{color:var(--green);font-size:11px;font-weight:750;letter-spacing:.16em;text-transform:uppercase}.hero h1{font-size:clamp(36px,6vw,64px);line-height:1.02;letter-spacing:-.055em;margin:14px 0}.hero p{color:#a9bac8;max-width:690px;font-size:17px}.notice{display:flex;gap:12px;align-items:center;background:#10251f;border:1px solid #285744;border-radius:10px;padding:13px 16px;color:#b9e8d4;font-size:13px;margin:22px 0 30px}
+.layout{display:grid;grid-template-columns: minmax(0,1.1fr) minmax(340px,.9fr);gap:18px}.panel{background:linear-gradient(160deg,#14212d,#101923);border:1px solid var(--line);border-radius:13px;padding:20px;box-shadow:0 16px 45px #0002}.panel h2{font-size:16px;margin:0 0 4px}.sub{color:var(--muted);font-size:12px;margin:0 0 18px}
+.field{margin:15px 0}.field label{display:block;color:#b7c6d3;font-size:12px;font-weight:650;margin-bottom:7px}.select,button{font:inherit}.select{width:100%;background:#0c151e;color:var(--text);border:1px solid #304354;border-radius:8px;padding:11px 12px}
+.modes{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.mode{border:1px solid #304354;background:#0d1720;color:#aebdca;padding:10px 7px;border-radius:8px;cursor:pointer;font-weight:700;font-size:12px}.mode.active{border-color:var(--green);color:var(--green);background:#142a26}
+button.primary{background:var(--green);color:#092018;border:0;border-radius:8px;padding:12px 17px;font-weight:800;cursor:pointer}button.secondary{background:#172634;color:#dbe6ef;border:1px solid #33495c;border-radius:8px;padding:11px 14px;cursor:pointer}button:focus-visible,.select:focus-visible{outline:2px solid var(--green);outline-offset:2px}.actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:20px}
+.kv{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin:15px 0}.kv div{background:#0d1720;border:1px solid #203140;border-radius:8px;padding:10px}.kv span{display:block;color:var(--muted);font-size:11px}.kv strong{font-size:13px}
+.empty{min-height:290px;display:flex;align-items:center;justify-content:center;text-align:center;color:var(--muted);padding:25px}.empty strong{display:block;color:var(--text);font-size:18px;margin-bottom:5px}
+.result{display:none}.result.show{display:block}.status{display:inline-flex;align-items:center;gap:7px;border-radius:30px;padding:5px 9px;font-size:10px;font-weight:800;letter-spacing:.08em;background:#1d2b37;color:var(--blue)}.status.green{background:#17372c;color:var(--green)}.status.amber{background:#392d1b;color:var(--amber)}.status.red{background:#3a2225;color:var(--red)}
+.result h3{font-size:23px;letter-spacing:-.03em;margin:12px 0 5px}.result p{color:#b3c1cd;margin:7px 0}.evidence{margin-top:16px;border-top:1px solid var(--line);padding-top:14px}.evidence h4{font-size:11px;letter-spacing:.12em;color:var(--muted);text-transform:uppercase;margin:0 0 8px}.evidence ul{padding-left:18px;margin:0;color:#c1ced8;font-size:13px}.evidence li{margin:5px 0}
+.policy{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-top:18px}.policy div{border:1px solid var(--line);background:#0e1821;border-radius:9px;padding:12px}.policy b{display:block;font-size:12px;margin-bottom:5px}.policy span{font-size:11px;color:var(--muted)}
+footer{border-top:1px solid var(--line);margin-top:32px;padding-top:18px;color:var(--muted);font-size:12px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+@media(max-width:800px){.layout{grid-template-columns:1fr}.nav{gap:10px}.wrap{padding:18px 16px 40px}.hero{padding-top:38px}.policy{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header><div class="brand">k3s-ai-remediation<small>Policy-gated incident response</small></div><nav class="nav"><a href="https://github.com/sunkaradp/k3s-ai-remediation">Source repository ↗</a><a href="https://sunkaradp.github.io/">Portfolio ↗</a></nav></header>
+<section class="hero"><div class="eyebrow">Interactive project demonstration</div><h1>Diagnose first.<br>Remediate within policy.</h1><p>Explore how an Alertmanager event maps to a constrained runbook, how confidence and risk affect the policy decision, and why the default posture is observe-only.</p></section>
+<div class="notice"><strong>SIMULATED ENVIRONMENT</strong><span>This browser demo uses illustrative alert context. It does not connect to Kubernetes, call an LLM, or execute cluster changes.</span></div>
+<main class="layout">
+<section class="panel">
+<h2>Incident scenario</h2><p class="sub">Choose a representative alert from the repository's deterministic fallback rules.</p>
+<div class="field"><label for="scenario">Alert type</label><select class="select" id="scenario">
+<option value="KubePodCrashLooping">KubePodCrashLooping</option>
+<option value="PodOOMKilled">PodOOMKilled</option>
+<option value="KubePodImagePullFailed">KubePodImagePullFailed</option>
+<option value="KubeDeploymentReplicasMismatch">KubeDeploymentReplicasMismatch</option>
+<option value="UnknownAlert">Unknown alert (no matching rule)</option>
+</select></div>
+<div class="kv"><div><span>Namespace</span><strong>payments</strong></div><div><span>Workload</span><strong>payments-api</strong></div><div><span>Pod</span><strong>payments-api-7d9c8f</strong></div><div><span>Signal source</span><strong>Alertmanager v4</strong></div></div>
+<div class="field"><label>Cluster-wide remediation mode</label><div class="modes" role="group" aria-label="Remediation mode"><button class="mode active" data-mode="OBSERVE">OBSERVE</button><button class="mode" data-mode="APPROVAL">APPROVAL</button><button class="mode" data-mode="AUTO">AUTO</button></div></div>
+<div class="field"><label>Dry-run</label><div class="status green">ENABLED · NO CLUSTER CHANGES</div></div>
+<div class="actions"><button class="primary" id="run">Run policy evaluation</button><button class="secondary" id="reset">Reset</button></div>
+</section>
+<section class="panel">
+<div id="empty" class="empty"><div><strong>Waiting for an incident</strong>Select an alert and run the evaluation to inspect its diagnosis and policy outcome.</div></div>
+<div id="result" class="result" aria-live="polite">
+<div id="decisionBadge" class="status">POLICY RESULT</div><h3 id="runbook">—</h3><p id="reason">—</p>
+<div class="kv"><div><span>Diagnosis source</span><strong id="source">Rules fallback</strong></div><div><span>Confidence</span><strong id="confidence">—</strong></div><div><span>Risk class</span><strong id="risk">—</strong></div><div><span>Policy tier</span><strong id="tier">—</strong></div></div>
+<div class="evidence"><h4>Collected evidence · illustrative</h4><ul id="evidence"></ul></div>
+<div class="evidence"><h4>Action outcome</h4><p id="action"></p></div>
+</div>
+</section>
+</main>
+<section class="panel" style="margin-top:18px"><h2>Policy model</h2><p class="sub">The demo mirrors the thresholds and runbook risk map in <code>remediator/app/policy.py</code>.</p>
+<div class="policy"><div><b>OBSERVE</b><span>Default mode. Records diagnosis; does not act.</span></div><div><b>APPROVAL</b><span>Non-automatic actions wait for a human decision.</span></div><div><b>AUTO</b><span>Only low-risk actions at or above 0.80 confidence are eligible.</span></div></div>
+<p class="sub" style="margin:14px 0 0">Minimum confidence to request action: 0.50 · Automatic confidence threshold: 0.80 · Medium-risk runbooks always require approval.</p>
+</section>
+<footer><span>Project: Kubernetes Incident Remediation for k3s</span><span><a href="https://github.com/sunkaradp/k3s-ai-remediation">Inspect implementation and tests on GitHub ↗</a></span></footer>
+</div>
+<script>
+const rules={
+ KubePodCrashLooping:{runbook:"restart_pod",reason:"Pod is crash looping.",confidence:.60,risk:"low",evidence:["Container restart count is elevated.","Recent event: BackOff — restarting failed container.","Rule-based fallback selected restart_pod."]},
+ PodOOMKilled:{runbook:"increase_memory",reason:"Container was terminated after exceeding its memory limit.",confidence:.85,risk:"medium",evidence:["Last termination reason: OOMKilled.","Recent event: Container exceeded memory limit.","Rule-based fallback selected increase_memory."]},
+ KubePodImagePullFailed:{runbook:"rollback_deployment",reason:"The new image cannot be pulled by the node.",confidence:.80,risk:"medium",evidence:["Recent event: ErrImagePull / ImagePullBackOff.","Image reference could not be retrieved.","Rule-based fallback selected rollback_deployment."]},
+ KubeDeploymentReplicasMismatch:{runbook:"scale_up",reason:"The workload has fewer ready replicas than desired.",confidence:.50,risk:"low",evidence:["Desired replicas: 3.","Ready replicas: 1.","Rule-based fallback selected scale_up."]},
+ UnknownAlert:{runbook:"none",reason:"No deterministic rule matches this alert.",confidence:0,risk:"none",evidence:["No matching alert rule was found.","No remediation runbook is selected."]}
+};
+let mode="OBSERVE";
+document.querySelectorAll(".mode").forEach(b=>b.addEventListener("click",()=>{mode=b.dataset.mode;document.querySelectorAll(".mode").forEach(x=>x.classList.toggle("active",x===b));}));
+function evaluate(){
+ const name=document.getElementById("scenario").value, d=rules[name]; let tier="OBSERVE";
+ if(d.runbook!=="none"&&mode!=="OBSERVE"&&d.confidence>=.50){if(mode==="AUTO"&&d.risk==="low"&&d.confidence>=.80)tier="AUTO";else tier="APPROVAL";}
+ let action=tier==="OBSERVE"?"Observed only. No runbook was executed.":tier==="APPROVAL"?"Waiting for human approval. No runbook was executed.":"Eligible for automatic runbook execution by policy; this demo remains dry-run and does not execute it.";
+ const badge=document.getElementById("decisionBadge");badge.textContent=tier==="AUTO"?"AUTO ELIGIBLE · DRY-RUN":tier==="APPROVAL"?"APPROVAL REQUIRED":"OBSERVE ONLY";badge.className="status "+(tier==="AUTO"?"green":tier==="APPROVAL"?"amber":"");
+ document.getElementById("runbook").textContent=d.runbook;document.getElementById("reason").textContent=d.reason;
+ document.getElementById("source").textContent="Deterministic rules";document.getElementById("confidence").textContent=(d.confidence*100).toFixed(0)+"%";document.getElementById("risk").textContent=d.risk.toUpperCase();document.getElementById("tier").textContent=tier;
+ document.getElementById("evidence").innerHTML=d.evidence.map(x=>"<li>"+x.replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]))+"</li>").join("");
+ document.getElementById("action").textContent=action;
+ document.getElementById("empty").style.display="none";document.getElementById("result").classList.add("show");
+}
+document.getElementById("run").addEventListener("click",evaluate);
+document.getElementById("reset").addEventListener("click",()=>{document.getElementById("scenario").value="KubePodCrashLooping";mode="OBSERVE";document.querySelectorAll(".mode").forEach(x=>x.classList.toggle("active",x.dataset.mode==="OBSERVE"));document.getElementById("result").classList.remove("show");document.getElementById("empty").style.display="flex";});
+</script>
+</body></html>
