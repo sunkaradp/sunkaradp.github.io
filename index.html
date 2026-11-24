@@ -3,320 +3,153 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#101419">
-<meta name="description" content="Durgaprasad Sunkara — Platform and DevOps Engineer working across Kubernetes, cloud infrastructure, delivery automation and observability.">
-<title>Durgaprasad Sunkara — Platform / DevOps Engineer</title>
+<meta name="theme-color" content="#191a18">
+<meta name="description" content="Durgaprasad Sunkara — DevOps and Platform Engineer in Hamburg, Germany.">
+<title>Durgaprasad Sunkara — DevOps / Platform Engineer</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
 <style>
-:root{
-  color-scheme:dark;
-  --bg:#101419;--panel:#171e25;--panel2:#1c252e;--ink:#edf2f5;
-  --muted:#9ba8b3;--dim:#687783;--line:#2a353f;--blue:#77b8ff;
-  --blue2:#a4d0ff;--green:#9ac6ad;--max:1220px;
-  --sans:"Manrope",Arial,sans-serif;--mono:"DM Mono",monospace;
-}
+:root{--bg:#191a18;--paper:#e8e4dc;--ink:#e8e4dc;--muted:#aaa69e;--line:#454640;--soft:#292a26;--accent:#d28b68;--mono:"DM Mono",monospace;--sans:"DM Sans",Arial,sans-serif;--serif:"Instrument Serif",Georgia,serif;--max:1180px}
 *{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:90px}
-body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.7 var(--sans);-webkit-font-smoothing:antialiased}
+html{scroll-behavior:smooth;scroll-padding-top:75px}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.65 var(--sans);-webkit-font-smoothing:antialiased}
 a{color:inherit;text-decoration:none}
-a:hover{color:var(--blue2)}
-a:focus-visible{outline:2px solid var(--blue);outline-offset:4px}
-::selection{background:var(--blue);color:#101419}
-.wrap{width:min(var(--max),calc(100% - 64px));margin-inline:auto}
-.skip{position:absolute;left:-9999px;top:8px;padding:10px;background:var(--ink);color:var(--bg);z-index:10}
+a:hover{color:var(--accent)}
+a:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
+::selection{background:var(--accent);color:#191a18}
+.wrap{width:min(var(--max),calc(100% - 72px));margin:auto}
+.skip{position:absolute;left:-9999px;top:8px;background:var(--paper);color:var(--bg);padding:8px;z-index:9}
 .skip:focus{left:8px}
-.site-header{height:82px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:30px}
-.brand{display:flex;align-items:center;gap:12px;font-size:13px;font-weight:800;letter-spacing:-.03em}
-.brand-mark{display:grid;place-items:center;width:32px;height:32px;border:1px solid #49647c;color:var(--blue);font:11px var(--mono)}
-.brand small{display:block;color:var(--dim);font:9px var(--mono);letter-spacing:.11em;text-transform:uppercase;margin-top:1px}
-.nav{display:flex;align-items:center;gap:25px}
-.nav a{color:var(--muted);font:10px var(--mono);letter-spacing:.04em}
-.nav a:hover{color:var(--blue2)}
-.header-cta{padding:10px 14px;border:1px solid #526a7e;color:var(--blue2)!important}
-.hero{padding:72px 0 78px;border-bottom:1px solid var(--line);position:relative;overflow:hidden}
-.hero:before{content:"";position:absolute;width:560px;height:560px;right:-210px;top:-280px;border:1px solid #263746;border-radius:50%;pointer-events:none}
-.hero-grid{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(360px,.92fr);gap:66px;align-items:center;position:relative}
-.kicker,.eyebrow,.micro,.section-index,.tag,.meta-label{font:10px var(--mono);letter-spacing:.1em;text-transform:uppercase}
-.kicker{color:var(--blue);display:flex;align-items:center;gap:11px}
-.kicker:before{content:"";width:27px;height:1px;background:var(--blue)}
-h1{font-size:clamp(54px,6.8vw,88px);line-height:.99;letter-spacing:-.075em;font-weight:700;margin:25px 0 25px;max-width:760px}
-h1 span{color:var(--blue);font-weight:500}
-.hero-copy{max-width:630px;color:#b5c0c8;font-size:16px;line-height:1.85;margin:0}
-.hero-actions{display:flex;align-items:center;gap:23px;flex-wrap:wrap;margin-top:34px}
-.button{display:inline-flex;align-items:center;gap:13px;padding:13px 17px;background:var(--blue);color:#101419;font-size:12px;font-weight:800;transition:transform .2s,background .2s}
-.button:hover{background:var(--blue2);color:#101419;transform:translateY(-2px)}
-.inline-link{font:11px var(--mono);color:var(--muted);border-bottom:1px solid #566572;padding:0 0 5px}
-.hero-proof{display:flex;gap:24px;flex-wrap:wrap;margin-top:44px;padding-top:20px;border-top:1px solid var(--line)}
-.proof-item{display:flex;align-items:center;gap:9px;color:var(--muted);font:10px var(--mono);text-transform:uppercase;letter-spacing:.05em}
-.proof-dot{width:6px;height:6px;background:var(--green);border-radius:50%;box-shadow:0 0 12px #9ac6ad55}
-.portrait-wrap{position:relative;max-width:560px;margin-left:auto}
-.portrait-frame{padding:9px;border:1px solid #34434e;background:linear-gradient(145deg,#26323c,#131a20);position:relative}
-.portrait-frame:before{content:"";position:absolute;inset:17px -10px -10px 17px;border:1px solid #405a70;z-index:-1}
-.portrait{display:block;width:100%;aspect-ratio:3/2;object-fit:cover;object-position:center 30%;filter:saturate(.88);background:#d2c9c1}
-.portrait-caption{display:flex;justify-content:space-between;gap:15px;margin-top:18px;color:var(--muted);font:9px var(--mono);letter-spacing:.07em;text-transform:uppercase}
-.portrait-caption span:last-child{color:var(--blue)}
-.hero-stamp{position:absolute;right:-14px;top:22px;background:var(--blue);color:#101419;padding:10px 13px;font:9px var(--mono);letter-spacing:.08em;text-transform:uppercase;writing-mode:vertical-rl}
-.section{padding:86px 0;border-bottom:1px solid var(--line)}
-.section-top{display:grid;grid-template-columns:210px minmax(0,1fr);gap:45px;margin-bottom:42px}
-.section-index{color:var(--blue);padding-top:10px}
-.section-index b{color:var(--dim);font-weight:400;margin-right:8px}
-h2{font-size:clamp(35px,4.4vw,55px);line-height:1.08;letter-spacing:-.065em;margin:0;font-weight:650;max-width:800px}
-.section-intro{max-width:680px;color:var(--muted);font-size:14px;line-height:1.8;margin:16px 0 0}
-.architecture{border:1px solid var(--line);background:var(--panel);padding:28px}
-.arch-head{display:flex;justify-content:space-between;gap:20px;align-items:center;margin-bottom:24px}
-.arch-head strong{font-size:13px;font-weight:700}
-.arch-head span{font:9px var(--mono);color:var(--green);text-transform:uppercase;letter-spacing:.08em}
-.arch-flow{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid #35434e;background:#11171d}
-.arch-node{padding:22px 18px;min-height:135px;border-right:1px solid #35434e;position:relative}
-.arch-node:last-child{border:0}
-.arch-node:not(:last-child):after{content:"→";position:absolute;right:-9px;top:24px;width:18px;height:18px;display:grid;place-items:center;background:var(--panel);color:var(--blue);font:12px var(--mono);z-index:1}
-.node-num{color:var(--blue);font:10px var(--mono)}
-.arch-node h3{font-size:14px;margin:14px 0 7px}
-.arch-node p{font-size:11px;line-height:1.6;color:var(--muted);margin:0}
-.arch-foot{display:flex;justify-content:space-between;gap:20px;margin-top:17px;color:var(--dim);font:9px var(--mono);letter-spacing:.04em}
-.project-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
-.project{background:var(--panel);border:1px solid var(--line);padding:25px;display:flex;flex-direction:column;min-height:275px;transition:border-color .2s,transform .2s}
-.project:hover{border-color:#59748a;transform:translateY(-3px)}
-.project-top{display:flex;justify-content:space-between;align-items:center;gap:15px}
-.project-num{color:var(--blue);font:10px var(--mono)}
-.project-kind{color:var(--dim);font:9px var(--mono);text-transform:uppercase;letter-spacing:.06em}
-.project h3{font-size:23px;letter-spacing:-.045em;margin:27px 0 10px}
-.project p{color:var(--muted);font-size:12px;line-height:1.8;margin:0 0 22px;max-width:570px}
-.project-bottom{margin-top:auto;display:flex;justify-content:space-between;align-items:end;gap:15px;border-top:1px solid var(--line);padding-top:16px}
-.tags{display:flex;gap:7px;flex-wrap:wrap}
-.tag{font-size:8px;color:#aab7c1;border:1px solid #35424c;padding:5px 7px;letter-spacing:.04em}
-.project-link{font:10px var(--mono);color:var(--blue);white-space:nowrap}
-.case-list{border-top:1px solid var(--line)}
-.case{display:grid;grid-template-columns:60px minmax(0,1fr) 190px;gap:25px;padding:26px 0;border-bottom:1px solid var(--line);align-items:start}
-.case-no{font:10px var(--mono);color:var(--blue);padding-top:5px}
-.case h3{font-size:18px;letter-spacing:-.035em;margin:0 0 7px}
-.case p{color:var(--muted);font-size:12px;line-height:1.8;margin:0;max-width:720px}
-.case-meta{font:9px/1.9 var(--mono);color:var(--dim);text-transform:uppercase}
+header{height:76px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between}
+.wordmark{font-weight:700;font-size:13px;letter-spacing:-.03em}
+.wordmark span{font:italic 17px var(--serif);color:var(--accent);margin-right:7px}
+nav{display:flex;gap:28px}
+nav a{font:10px var(--mono);color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+.hero{padding:78px 0 82px;display:grid;grid-template-columns:1.05fr .95fr;gap:76px;align-items:center;border-bottom:1px solid var(--line)}
+.eyebrow{font:10px var(--mono);color:var(--accent);text-transform:uppercase;letter-spacing:.13em}
+h1{font:clamp(64px,8vw,108px)/.91 var(--serif);font-weight:400;letter-spacing:-.035em;margin:24px 0 28px;max-width:650px}
+h1 em{color:var(--accent);font-weight:400}
+.intro{max-width:540px;font-size:16px;color:#c5c0b7;line-height:1.8;margin:0}
+.hero-links{display:flex;gap:25px;align-items:center;margin-top:30px}
+.hero-links a{font:10px var(--mono);text-transform:uppercase;letter-spacing:.08em;padding-bottom:5px;border-bottom:1px solid var(--accent)}
+.photo{width:100%;max-width:540px;justify-self:end}
+.photo img{display:block;width:100%;aspect-ratio:1.36/1;object-fit:cover;object-position:center 29%;filter:saturate(.82)}
+.photo-note{display:flex;justify-content:space-between;gap:15px;padding-top:10px;border-top:1px solid var(--line);margin-top:10px;color:var(--muted);font:9px var(--mono);text-transform:uppercase;letter-spacing:.08em}
+.photo-note span:last-child{color:var(--accent)}
+.meta-line{display:flex;gap:24px;flex-wrap:wrap;padding:16px 0 0;color:var(--muted);font:9px var(--mono);text-transform:uppercase;letter-spacing:.08em}
+.meta-line span+span:before{content:"/";color:var(--accent);margin-right:24px}
+.section{padding:72px 0;border-bottom:1px solid var(--line)}
+.section-head{display:grid;grid-template-columns:190px 1fr;gap:45px;margin-bottom:34px}
+.section-label{font:10px var(--mono);color:var(--accent);text-transform:uppercase;letter-spacing:.1em;padding-top:9px}
+h2{font:clamp(38px,5vw,61px)/.98 var(--serif);font-weight:400;letter-spacing:-.025em;margin:0;max-width:780px}
+.section-lead{max-width:650px;color:var(--muted);font-size:13px;margin:14px 0 0;line-height:1.8}
+.feature{display:grid;grid-template-columns:1fr 1fr;gap:55px;align-items:start;padding:30px 0;border-top:1px solid var(--line)}
+.feature h3{font:36px/1.05 var(--serif);font-weight:400;margin:0 0 13px}
+.feature p{font-size:13px;color:#c0bbb2;line-height:1.85;margin:0;max-width:560px}
+.feature aside{border-left:1px solid var(--accent);padding-left:20px}
+.feature aside p{font:11px/1.9 var(--mono);color:var(--muted)}
+.feature aside strong{color:var(--paper);font-weight:400}
+.work-list{border-top:1px solid var(--line)}
+.work-row{display:grid;grid-template-columns:55px minmax(0,1fr) 170px;gap:22px;padding:23px 0;border-bottom:1px solid var(--line);align-items:start}
+.work-number{font:10px var(--mono);color:var(--accent);padding-top:5px}
+.work-row h3{font-size:18px;letter-spacing:-.025em;margin:0 0 6px;font-weight:600}
+.work-row p{font-size:12px;line-height:1.8;color:var(--muted);margin:0;max-width:670px}
+.work-kind{font:9px/1.8 var(--mono);color:var(--muted);text-transform:uppercase;letter-spacing:.06em;text-align:right}
+.work-link{display:inline-block;margin-top:9px;color:var(--accent);font:9px var(--mono);letter-spacing:.07em}
 .timeline{border-top:1px solid var(--line)}
-.role{display:grid;grid-template-columns:210px minmax(0,1fr);gap:45px;padding:26px 0;border-bottom:1px solid var(--line)}
-.role-date{font:10px/1.8 var(--mono);color:var(--blue);text-transform:uppercase}
-.role h3{font-size:19px;margin:0;letter-spacing:-.03em}
-.role-org{font-size:12px;color:var(--muted);margin:4px 0 12px}
-.role ul{margin:0;padding-left:17px;color:#aebac3;font-size:12px;line-height:1.8}
-.role li{padding:2px 0}
-.skills-grid{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);border-left:1px solid var(--line)}
-.skill{padding:22px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--panel)}
-.skill h3{font:10px var(--mono);text-transform:uppercase;letter-spacing:.08em;color:var(--blue);margin:0 0 11px}
-.skill p{font-size:12px;line-height:1.8;color:var(--muted);margin:0}
-.education{display:flex;justify-content:space-between;gap:25px;align-items:flex-start;border-top:1px solid var(--line);padding-top:22px}
-.education h3{font-size:18px;margin:0 0 5px}
-.education p{font-size:12px;color:var(--muted);margin:4px 0}
-.education-date{font:10px var(--mono);color:var(--blue);white-space:nowrap}
-.contact{padding:80px 0;background:#151d24;border-bottom:1px solid var(--line)}
-.contact-grid{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:40px;align-items:end}
-.contact h2{font-size:clamp(38px,5vw,62px);max-width:700px}
-.contact p{font-size:13px;color:var(--muted);max-width:560px;margin:15px 0 0}
+.job{display:grid;grid-template-columns:190px 1fr;gap:45px;padding:23px 0;border-bottom:1px solid var(--line)}
+.job-date{font:10px/1.8 var(--mono);color:var(--accent);text-transform:uppercase}
+.job h3{font-size:17px;margin:0 0 3px}
+.job-org{font-size:12px;color:var(--muted);margin-bottom:10px}
+.job ul{padding-left:17px;margin:0;color:#c0bbb2;font-size:12px;line-height:1.85}
+.tool-list{display:grid;grid-template-columns:repeat(2,1fr);border-top:1px solid var(--line)}
+.tool{padding:17px 0;border-bottom:1px solid var(--line);display:grid;grid-template-columns:180px 1fr;gap:20px}
+.tool strong{font:10px var(--mono);color:var(--accent);text-transform:uppercase;letter-spacing:.06em;font-weight:400}
+.tool span{font-size:12px;color:#c0bbb2}
+.education{border-top:1px solid var(--line);padding-top:20px;display:flex;justify-content:space-between;gap:25px}
+.education h3{font-size:17px;margin:0 0 4px}
+.education p{font-size:12px;color:var(--muted);margin:3px 0}
+.education time{font:10px var(--mono);color:var(--accent);white-space:nowrap}
+.contact{padding:75px 0 80px;display:grid;grid-template-columns:1fr auto;gap:35px;align-items:end}
+.contact h2{max-width:700px}
+.contact p{font-size:13px;color:var(--muted);margin:14px 0 0}
 .contact-links{display:flex;gap:18px;flex-wrap:wrap;justify-content:flex-end}
-.contact-links a{font:10px var(--mono);color:var(--blue);border-bottom:1px solid #52697a;padding-bottom:5px}
-footer{padding:22px 0;color:var(--dim);font:9px var(--mono);letter-spacing:.05em}
-.footer-row{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
-@media(max-width:900px){
- .wrap{width:min(100% - 42px,var(--max))}
- .nav{gap:14px}.nav a{font-size:9px}
- .hero-grid{grid-template-columns:1fr  .8fr;gap:35px}
- h1{font-size:clamp(50px,7vw,72px)}
- .section-top,.role{grid-template-columns:150px minmax(0,1fr);gap:25px}
- .arch-node{padding:18px 12px}
- .case{grid-template-columns:42px minmax(0,1fr) 145px;gap:16px}
-}
-@media(max-width:680px){
- .wrap{width:calc(100% - 36px)}
- .site-header{height:auto;min-height:75px;padding:15px 0;align-items:flex-start;flex-direction:column;gap:14px}
- .nav{width:100%;gap:12px 17px;flex-wrap:wrap}
- .nav a{font-size:9px}
- .header-cta{padding:0;border:0}
- .hero{padding:55px 0 60px}
- .hero-grid{grid-template-columns:1fr;gap:38px}
- h1{font-size:clamp(49px,12vw,72px);max-width:600px}
- .hero-copy{font-size:14px}
- .hero-proof{gap:13px 20px;margin-top:30px}
- .portrait-wrap{width:min(100%,560px);margin:0}
- .portrait{aspect-ratio:3/2}
- .section{padding:62px 0}
- .section-top{grid-template-columns:1fr;gap:13px;margin-bottom:30px}
- h2{font-size:clamp(34px,9vw,47px)}
- .architecture{padding:18px}
- .arch-flow{grid-template-columns:1fr 1fr}
- .arch-node{min-height:120px;border-bottom:1px solid #35434e}
- .arch-node:nth-child(2){border-right:0}
- .arch-node:nth-child(3),.arch-node:nth-child(4){border-bottom:0}
- .arch-node:after{display:none!important}
- .arch-foot{flex-direction:column;gap:7px}
- .project-grid{grid-template-columns:1fr}
- .project{min-height:245px;padding:21px}
- .case{grid-template-columns:34px 1fr;gap:13px}
- .case-meta{grid-column:2}
- .role{grid-template-columns:1fr;gap:6px}
- .skills-grid{grid-template-columns:1fr 1fr}
- .contact-grid{grid-template-columns:1fr;gap:28px}
- .contact-links{justify-content:flex-start}
-}
-@media(max-width:390px){
- h1{font-size:47px}
- .skills-grid{grid-template-columns:1fr}
- .arch-flow{grid-template-columns:1fr}
- .arch-node{border-right:0!important;border-bottom:1px solid #35434e!important}
- .arch-node:last-child{border-bottom:0!important}
- .project-bottom{align-items:flex-start;flex-direction:column}
-}
-@media(prefers-reduced-motion:reduce){
- html{scroll-behavior:auto}
- *,*:before,*:after{transition:none!important;animation:none!important}
-}
+.contact-links a{font:10px var(--mono);color:var(--accent);text-transform:uppercase;letter-spacing:.06em;border-bottom:1px solid var(--line);padding-bottom:5px}
+footer{border-top:1px solid var(--line);padding:18px 0;color:var(--muted);font:9px var(--mono);text-transform:uppercase;letter-spacing:.07em}
+.foot{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
+@media(max-width:800px){.wrap{width:calc(100% - 44px)}.hero{gap:35px}.section-head,.job{grid-template-columns:140px 1fr;gap:25px}.work-row{grid-template-columns:38px 1fr 130px;gap:14px}.tool{grid-template-columns:140px 1fr}}
+@media(max-width:620px){.wrap{width:calc(100% - 36px)}header{height:auto;padding:18px 0;align-items:flex-start;gap:20px;flex-direction:column}nav{gap:16px;flex-wrap:wrap}nav a{font-size:9px}.hero{grid-template-columns:1fr;padding:55px 0 58px;gap:32px}h1{font-size:clamp(64px,16vw,88px);margin:20px 0}.intro{font-size:14px}.photo{max-width:100%}.section{padding:58px 0}.section-head{grid-template-columns:1fr;gap:12px;margin-bottom:27px}h2{font-size:44px}.feature{grid-template-columns:1fr;gap:20px}.work-row{grid-template-columns:30px 1fr;gap:12px}.work-kind{grid-column:2;text-align:left}.job{grid-template-columns:1fr;gap:5px}.tool-list{grid-template-columns:1fr}.tool{grid-template-columns:130px 1fr}.education{flex-direction:column;gap:8px}.contact{grid-template-columns:1fr;gap:25px}.contact-links{justify-content:flex-start}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 </style>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
-<header class="site-header wrap">
-  <a class="brand" href="#top"><span class="brand-mark">DS.</span><span>Durgaprasad Sunkara<small>Platform / DevOps Engineer</small></span></a>
-  <nav class="nav" aria-label="Main navigation">
-    <a href="#platform">PLATFORM</a><a href="#projects">PROJECTS</a><a href="#notes">CASE NOTES</a><a href="#experience">EXPERIENCE</a><a href="#contact" class="header-cta">GET IN TOUCH ↗</a>
-  </nav>
+<header class="wrap">
+<a class="wordmark" href="#top"><span>DS.</span>Durgaprasad Sunkara</a>
+<nav aria-label="Main navigation"><a href="#work">Work</a><a href="#experience">Experience</a><a href="#tools">Tools</a><a href="#contact">Contact</a></nav>
 </header>
 <main id="main">
 <section class="hero wrap" id="top">
-  <div class="hero-grid">
-    <div>
-      <div class="kicker">Infrastructure · Delivery · Reliability</div>
-      <h1>Making complex systems <span>work in production.</span></h1>
-      <p class="hero-copy">I’m a Platform and DevOps Engineer working across Kubernetes, cloud infrastructure, delivery automation and observability. I build repeatable deployment paths, make operational problems easier to investigate and focus on changes that are safe to understand and maintain.</p>
-      <div class="hero-actions">
-        <a class="button" href="#projects">Explore engineering work <span aria-hidden="true">↘</span></a>
-        <a class="inline-link" href="resume.pdf">DOWNLOAD RÉSUMÉ ↗</a>
-      </div>
-      <div class="hero-proof">
-        <div class="proof-item"><span class="proof-dot"></span> Hamburg, Germany</div>
-        <div class="proof-item">Kubernetes / Cloud / SRE</div>
-        <div class="proof-item">Open to relocation</div>
-      </div>
-    </div>
-    <div class="portrait-wrap">
-      <div class="portrait-frame">
-        <img class="portrait" src="profile.jpg?v=2" alt="Portrait of Durgaprasad Sunkara" width="1488" height="992" fetchpriority="high">
-      </div>
-      <div class="portrait-caption"><span>Durga Prasad Sunkara / Engineer</span><span>DE · 53°33′N</span></div>
-      <div class="hero-stamp">Platform engineering · 2026</div>
-    </div>
-  </div>
+<div>
+<div class="eyebrow">DevOps / Platform Engineering · Hamburg, Germany</div>
+<h1>Building and running <em>infrastructure.</em></h1>
+<p class="intro">I’m a DevOps and Platform Engineer with experience in Kubernetes, cloud infrastructure and delivery automation. Most recently, I worked on the platform behind an LLM-based product at AIcoo — from cluster configuration and CI/CD to secrets, monitoring and recovery.</p>
+<div class="hero-links"><a href="resume.pdf">Résumé ↗</a><a href="https://github.com/sunkaradp" target="_blank" rel="noopener">GitHub ↗</a><a href="https://www.linkedin.com/in/dpcloud" target="_blank" rel="noopener">LinkedIn ↗</a></div>
+<div class="meta-line"><span>Based in Hamburg</span><span>Open to Germany / Europe</span></div>
+</div>
+<div class="photo">
+<img src="profile.jpg?v=3" alt="Portrait of Durgaprasad Sunkara" width="1488" height="992" fetchpriority="high">
+<div class="photo-note"><span>Durgaprasad Sunkara</span><span>DevOps / Platform</span></div>
+</div>
 </section>
 
-<section class="section wrap" id="platform">
-  <div class="section-top">
-    <div class="section-index"><b>01 /</b> PLATFORM WORK</div>
-    <div><h2>From a code change to a running service.</h2><p class="section-intro">A simplified view of the delivery environment I worked on at AIcoo. This documents the main stages and dependencies; it is an architecture summary, not a live system dashboard.</p></div>
-  </div>
-  <div class="architecture">
-    <div class="arch-head"><strong>AIcoo / Kubernetes delivery environment</strong><span>Documented implementation</span></div>
-    <div class="arch-flow">
-      <article class="arch-node"><span class="node-num">01 / SOURCE</span><h3>GitHub</h3><p>Repository changes, reviews and version control</p></article>
-      <article class="arch-node"><span class="node-num">02 / BUILD</span><h3>GitHub Actions</h3><p>CI workflow running on a self-hosted runner</p></article>
-      <article class="arch-node"><span class="node-num">03 / PACKAGE</span><h3>GHCR</h3><p>Container images and database migration step</p></article>
-      <article class="arch-node"><span class="node-num">04 / DEPLOY</span><h3>Hetzner + k3s</h3><p>Kustomize-managed development and staging</p></article>
-    </div>
-    <div class="arch-foot"><span>APPLICATION: FASTAPI / FRONTEND / POSTGRESQL</span><span>CONFIGURATION: 28 KUSTOMIZE MANIFESTS</span></div>
-  </div>
-</section>
-
-<section class="section wrap" id="projects">
-  <div class="section-top">
-    <div class="section-index"><b>02 /</b> SELECTED PROJECTS</div>
-    <div><h2>Systems built to solve operational problems.</h2><p class="section-intro">A selection of practical engineering work. Each project links to its source so the implementation, boundaries and current state can be reviewed.</p></div>
-  </div>
-  <div class="project-grid">
-    <article class="project">
-      <div class="project-top"><span class="project-num">PROJECT / 01</span><span class="project-kind">Observability · Incident response</span></div>
-      <h3>AlertScope</h3>
-      <p>An incident-investigation service that combines Alertmanager events with Prometheus metrics, Loki logs and Kubernetes context to prepare a first-pass incident summary for Slack. Includes a local failure demonstration and cloud identity configuration without static credentials.</p>
-      <div class="project-bottom"><div class="tags"><span class="tag">PROMETHEUS</span><span class="tag">LOKI</span><span class="tag">KUBERNETES</span><span class="tag">PYTHON</span></div><a class="project-link" href="https://github.com/sunkaradp/alertscope" target="_blank" rel="noopener">SOURCE ↗</a></div>
-    </article>
-    <article class="project">
-      <div class="project-top"><span class="project-num">PROJECT / 02</span><span class="project-kind">Kubernetes · Guardrails</span></div>
-      <h3>AI-assisted remediation</h3>
-      <p>A k3s remediation service built around predefined runbooks and policy boundaries. The model selects from named actions rather than arbitrary commands; observe and dry-run modes are the defaults. Cluster deployment, approval integration and chaos verification remain future work.</p>
-      <div class="project-bottom"><div class="tags"><span class="tag">FASTAPI</span><span class="tag">RBAC</span><span class="tag">RUNBOOKS</span></div><a class="project-link" href="https://github.com/sunkaradp/k3s-ai-remediation" target="_blank" rel="noopener">SOURCE ↗</a></div>
-    </article>
-    <article class="project">
-      <div class="project-top"><span class="project-num">PROJECT / 03</span><span class="project-kind">Platform · Capacity signals</span></div>
-      <h3>Kubernetes Platform Intelligence</h3>
-      <p>An observe-only operator experiment that uses Prometheus memory metrics and a simple regression trend to estimate possible node memory pressure, then emits a Kubernetes Warning Event. Tested on Minikube; the prediction is an investigation signal, not a guarantee.</p>
-      <div class="project-bottom"><div class="tags"><span class="tag">OPERATOR</span><span class="tag">PROMETHEUS</span><span class="tag">HELM</span></div><a class="project-link" href="https://github.com/sunkaradp/k8s-platform-intelligence" target="_blank" rel="noopener">SOURCE ↗</a></div>
-    </article>
-    <article class="project">
-      <div class="project-top"><span class="project-num">PROJECT / 04</span><span class="project-kind">Developer tooling · Security</span></div>
-      <h3>Deployment Dash Intelligence</h3>
-      <p>A read-only Kubernetes manifest reviewer. It checks YAML for configuration and container-security issues, points to relevant manifest paths and suggests improvements. Its score is a rule-based prioritisation aid, not an outage probability or compliance certification.</p>
-      <div class="project-bottom"><div class="tags"><span class="tag">REACT</span><span class="tag">TYPESCRIPT</span><span class="tag">FASTAPI</span></div><a class="project-link" href="https://github.com/sunkaradp/deployment-dash-intelligence" target="_blank" rel="noopener">SOURCE ↗</a></div>
-    </article>
-    <article class="project">
-      <div class="project-top"><span class="project-num">PROJECT / 05</span><span class="project-kind">Data engineering · Streaming</span></div>
-      <h3>EV charging sessions</h3>
-      <p>A collaborative data-engineering project around event ingestion and analytics. My documented contributions include producer reliability, transformation tests and Python CI.</p>
-      <div class="project-bottom"><div class="tags"><span class="tag">KAFKA</span><span class="tag">AIRFLOW</span><span class="tag">PYTHON</span></div><a class="project-link" href="https://github.com/sunkaradp/ev-charging-sessions" target="_blank" rel="noopener">SOURCE ↗</a></div>
-    </article>
-  </div>
-</section>
-
-<section class="section wrap" id="notes">
-  <div class="section-top">
-    <div class="section-index"><b>03 /</b> CASE NOTES</div>
-    <div><h2>Operational details matter.</h2><p class="section-intro">A few concrete problems from the AIcoo environment. The focus is on diagnosis, evidence and the corrective work — not inflated impact claims.</p></div>
-  </div>
-  <div class="case-list">
-    <article class="case"><div class="case-no">01</div><div><h3>Database recovery is more than restoring a file.</h3><p>A 158 MB database restore exposed 61 schema-drift errors. The recovery path required rebuilding the database and replaying migrations rather than treating a successful file restore as proof that the service was healthy.</p></div><div class="case-meta">Recovery process<br>Schema consistency<br>Database migrations</div></article>
-    <article class="case"><div class="case-no">02</div><div><h3>Startup failures need more than a restart.</h3><p>Crash loops were traced to CPU throttling during startup. Startup behavior, CPU limits and probe timing were reviewed together, then resource and startup settings were adjusted.</p></div><div class="case-meta">Kubernetes<br>Resource sizing<br>Startup probes</div></article>
-    <article class="case"><div class="case-no">03</div><div><h3>Pipeline automation must protect runtime state.</h3><p>Two workflow defects could remove runtime secrets and run migrations without required configuration. The workflows were corrected to protect runtime configuration and make migration execution explicit.</p></div><div class="case-meta">GitHub Actions<br>Secrets handling<br>Migration jobs</div></article>
-    <article class="case"><div class="case-no">04</div><div><h3>Secrets need a complete lifecycle.</h3><p>After a secret exposure, the response included purging affected Git history, rotating keys and moving secret material into Sealed Secrets. Removing a value from the latest file alone was not treated as remediation.</p></div><div class="case-meta">Incident response<br>Credential rotation<br>Sealed Secrets</div></article>
-  </div>
+<section class="section wrap" id="work">
+<div class="section-head"><div class="section-label">01 / Selected work</div><div><h2>Work that has a reason to exist.</h2><p class="section-lead">A few systems I have worked on or built to explore operational problems. Source code is linked so the implementation can be inspected directly.</p></div></div>
+<div class="feature">
+<div><h3>AIcoo platform environment</h3><p>I owned the DevOps environment for a FastAPI backend, frontend and PostgreSQL application running on k3s at Hetzner Cloud. I wrote the Kubernetes configuration with Kustomize, separated development and staging overlays, and built the GitHub Actions delivery path using a self-hosted runner and GHCR.</p></div>
+<aside><p><strong>Environment</strong><br>Hetzner Cloud · k3s<br><br><strong>Deployment</strong><br>28 Kubernetes manifests<br>Kustomize overlays<br>GitHub Actions · GHCR<br><br><strong>Application</strong><br>FastAPI · Frontend · PostgreSQL</p></aside>
+</div>
+<div class="work-list">
+<article class="work-row"><div class="work-number">02</div><div><h3>AlertScope</h3><p>An observability and incident-investigation project connecting alert context with metrics, logs and Kubernetes information. The aim is to help an engineer get from an alert to useful evidence without pretending to replace incident judgement.</p><a class="work-link" href="https://github.com/sunkaradp/alertscope" target="_blank" rel="noopener">VIEW SOURCE ↗</a></div><div class="work-kind">Observability<br>Incident response</div></article>
+<article class="work-row"><div class="work-number">03</div><div><h3>k3s AI Remediation</h3><p>A constrained remediation experiment using allowlisted runbooks, scoped RBAC and dry-run defaults. The model can select from predefined actions; it is not given arbitrary shell access to a cluster.</p><a class="work-link" href="https://github.com/sunkaradp/k3s-ai-remediation" target="_blank" rel="noopener">VIEW SOURCE ↗</a></div><div class="work-kind">Kubernetes<br>Guardrails</div></article>
+<article class="work-row"><div class="work-number">04</div><div><h3>Kubernetes Platform Intelligence</h3><p>An operator experiment that watches memory signals and emits a Kubernetes Warning Event when a simple trend estimate suggests possible node pressure. It is an investigation signal, not an automatic remediation system.</p><a class="work-link" href="https://github.com/sunkaradp/k8s-platform-intelligence" target="_blank" rel="noopener">VIEW SOURCE ↗</a></div><div class="work-kind">Kubernetes<br>Operator</div></article>
+<article class="work-row"><div class="work-number">05</div><div><h3>k3s DevOps Reference</h3><p>A practical reference repository for repeatable Kubernetes and DevOps setup, documenting configuration and operational decisions rather than presenting a polished product demo.</p><a class="work-link" href="https://github.com/sunkaradp/k3s-devops-reference" target="_blank" rel="noopener">VIEW SOURCE ↗</a></div><div class="work-kind">Infrastructure<br>Reference</div></article>
+</div>
 </section>
 
 <section class="section wrap" id="experience">
-  <div class="section-top">
-    <div class="section-index"><b>04 /</b> EXPERIENCE</div>
-    <div><h2>Experience across infrastructure and delivery.</h2><p class="section-intro">Responsibilities and implementation details, described in terms that can be discussed and verified.</p></div>
-  </div>
-  <div class="timeline">
-    <article class="role"><div class="role-date">OCT 2026 — PRESENT</div><div><h3>Master’s Thesis</h3><div class="role-org">AIcoo GmbH · In collaboration with SRH University, Hamburg</div><ul><li>Developing a Docker-based MLOps-style pipeline for LLM-assisted extraction of project-related emails from the Enron corpus.</li><li>Exploring vector clustering, communication hierarchy and keyword-search approaches to identify project-related email collections.</li></ul></div></article>
-    <article class="role"><div class="role-date">APR 2026 — SEP 2026</div><div><h3>MLOps / DevOps Intern</h3><div class="role-org">AIcoo GmbH · Hamburg, Germany</div><ul><li>Built Kubernetes configuration for a FastAPI, frontend and PostgreSQL platform on k3s hosted by Hetzner Cloud.</li><li>Created 28 Kubernetes manifests with Kustomize, including development and staging overlays.</li><li>Implemented GitHub Actions delivery using self-hosted runners, GHCR image publishing, database migrations and deployment checks.</li><li>Worked on secrets, observability, operational runbooks and disaster-recovery procedures.</li></ul></div></article>
-    <article class="role"><div class="role-date">APR 2023 — AUG 2024</div><div><h3>DevOps Engineer</h3><div class="role-org">Skillmine Technology Consulting · Bengaluru, India</div><ul><li>Worked on application and data migration, CI/CD improvements, Kubernetes and monitoring.</li><li>Contributed to migration from DigitalOcean to CloudJiffy and Prometheus/Grafana monitoring.</li></ul></div></article>
-    <article class="role"><div class="role-date">NOV 2021 — FEB 2023</div><div><h3>Junior DevOps Engineer</h3><div class="role-org">Test Yantra Software Solutions · Bengaluru, India</div><ul><li>Worked with AWS infrastructure, Terraform, Ansible, CI/CD and Kubernetes operations.</li></ul></div></article>
-    <article class="role"><div class="role-date">MAR 2020 — SEP 2021</div><div><h3>Software Associate</h3><div class="role-org">Tech Mahindra · India</div></div></article>
-  </div>
+<div class="section-head"><div class="section-label">02 / Experience</div><div><h2>Where I’ve worked.</h2></div></div>
+<div class="timeline">
+<article class="job"><div class="job-date">APR 2026 — PRESENT</div><div><h3>DevOps / Platform Engineering · Master’s Thesis</h3><div class="job-org">AIcoo GmbH · Hamburg, Germany</div><ul><li>Built and maintained the Kubernetes and CI/CD environment for a FastAPI, frontend and PostgreSQL platform on k3s at Hetzner Cloud.</li><li>Created 28 Kubernetes manifests with Kustomize, including development and staging overlays.</li><li>Implemented GitHub Actions delivery using self-hosted runners, GHCR image publishing and database migration steps.</li><li>Now completing the master’s thesis in collaboration with AIcoo and SRH University.</li></ul></div></article>
+<article class="job"><div class="job-date">APR 2023 — AUG 2024</div><div><h3>DevOps Engineer</h3><div class="job-org">Skillmine Technology Consulting · India</div><ul><li>Worked across application and data migration, CI/CD, Kubernetes and monitoring.</li><li>Contributed to migration from DigitalOcean to CloudJiffy and Prometheus/Grafana monitoring.</li></ul></div></article>
+<article class="job"><div class="job-date">NOV 2021 — FEB 2023</div><div><h3>Junior DevOps Engineer</h3><div class="job-org">Test Yantra Software Solutions · India</div><ul><li>Worked with AWS infrastructure, Terraform, Ansible, CI/CD and Kubernetes operations.</li></ul></div></article>
+<article class="job"><div class="job-date">MAR 2020 — SEP 2021</div><div><h3>Software Associate</h3><div class="job-org">Tech Mahindra · India</div></div></article>
+</div>
 </section>
 
-<section class="section wrap" id="capabilities">
-  <div class="section-top">
-    <div class="section-index"><b>05 /</b> TOOLKIT</div>
-    <div><h2>Tools in the work, not a wall of badges.</h2><p class="section-intro">Grouped by the engineering problems they help solve.</p></div>
-  </div>
-  <div class="skills-grid">
-    <article class="skill"><h3>01 / Containers & orchestration</h3><p>Kubernetes · k3s · Docker · Helm · Kustomize</p></article>
-    <article class="skill"><h3>02 / Cloud & infrastructure</h3><p>AWS · Hetzner Cloud · Terraform · Ansible</p></article>
-    <article class="skill"><h3>03 / CI/CD & GitOps</h3><p>GitHub Actions · GitLab CI · Argo CD · GHCR</p></article>
-    <article class="skill"><h3>04 / Observability</h3><p>Prometheus · Grafana · Loki · Alertmanager</p></article>
-    <article class="skill"><h3>05 / Application & data</h3><p>Python · FastAPI · PostgreSQL · Kafka · Airflow</p></article>
-    <article class="skill"><h3>06 / Security & operations</h3><p>RBAC · Sealed Secrets · Trivy · runbooks · recovery</p></article>
-  </div>
+<section class="section wrap" id="tools">
+<div class="section-head"><div class="section-label">03 / Tools</div><div><h2>What I use.</h2></div></div>
+<div class="tool-list">
+<div class="tool"><strong>Containers</strong><span>Kubernetes · k3s · Docker · Helm · Kustomize</span></div>
+<div class="tool"><strong>Cloud / IaC</strong><span>AWS · Hetzner Cloud · Terraform · Ansible</span></div>
+<div class="tool"><strong>Delivery</strong><span>GitHub Actions · GitLab CI · Argo CD · GHCR</span></div>
+<div class="tool"><strong>Observability</strong><span>Prometheus · Grafana · Loki · Alertmanager</span></div>
+<div class="tool"><strong>Development</strong><span>Python · FastAPI · PostgreSQL</span></div>
+<div class="tool"><strong>Operations</strong><span>RBAC · Sealed Secrets · Trivy · recovery procedures</span></div>
+</div>
 </section>
 
 <section class="section wrap" id="education">
-  <div class="section-top"><div class="section-index"><b>06 /</b> EDUCATION</div><div><h2>Current study and research.</h2></div></div>
-  <div class="education"><div><h3>MSc Applied Data Science and Analytics</h3><p>SRH University · Hamburg, Germany</p><p>Master’s thesis: extracting project-related information from the Enron email corpus using LLM-based and clustering approaches.</p></div><div class="education-date">EXPECTED MAR 2027</div></div>
+<div class="section-head"><div class="section-label">04 / Education</div><div><h2>Currently studying.</h2></div></div>
+<div class="education"><div><h3>MSc Applied Data Science and Analytics</h3><p>SRH University · Hamburg, Germany</p><p>Master’s thesis focused on extracting project-related information from email collections using LLM-based and clustering approaches.</p></div><time>EXPECTED MAR 2027</time></div>
 </section>
 
-<section class="contact" id="contact">
-  <div class="wrap contact-grid">
-    <div><div class="kicker">07 / CONTACT</div><h2>Let’s build systems people can rely on.</h2><p>Open to DevOps, Platform Engineering, Cloud and SRE opportunities across Germany and Europe.</p></div>
-    <div class="contact-links"><a href="mailto:durgaprasadsunkara55@gmail.com">EMAIL ↗</a><a href="https://www.linkedin.com/in/dpcloud" target="_blank" rel="noopener">LINKEDIN ↗</a><a href="https://github.com/sunkaradp" target="_blank" rel="noopener">GITHUB ↗</a><a href="resume.pdf">RÉSUMÉ ↗</a></div>
-  </div>
+<section class="contact wrap" id="contact">
+<div><div class="section-label">05 / Contact</div><h2>Have a role or a problem worth solving?</h2><p>I’m open to DevOps, Platform Engineering, Cloud and SRE opportunities in Germany and Europe.</p></div>
+<div class="contact-links"><a href="mailto:durgaprasadsunkara55@gmail.com">Email ↗</a><a href="https://www.linkedin.com/in/dpcloud" target="_blank" rel="noopener">LinkedIn ↗</a><a href="https://github.com/sunkaradp" target="_blank" rel="noopener">GitHub ↗</a></div>
 </section>
 </main>
-<footer><div class="wrap footer-row"><span>© 2026 DURGAPRASAD SUNKARA</span><span>PLATFORM ENGINEERING / HAMBURG, GERMANY</span></div></footer>
+<footer><div class="wrap foot"><span>© 2026 Durgaprasad Sunkara</span><span>Hamburg, Germany</span></div></footer>
 </body>
 </html>
