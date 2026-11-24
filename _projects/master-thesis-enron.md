@@ -4,6 +4,7 @@ weight: 6
 tools: [Python, SQLite, LLMs, Graph Clustering, Evaluation]
 description: Research pipeline for finding project-related email conversations and evaluating automated project knowledge extraction.
 repo: https://github.com/sunkaradp/master-thesis-enron
+demo: https://sunkaradp.github.io/master-thesis-enron-demo/
 preview_label: RESEARCH PIPELINE
 preview: "Enron email corpus|Project retrieval|Evaluation"
 preview_note: "Research in progress · SRH University / AIcoo"
