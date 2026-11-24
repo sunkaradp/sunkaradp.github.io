@@ -1,0 +1,17 @@
+<div class="project-grid">
+  {% assign featured = "deployment-dash,alertscope,k3s-ai-remediation,k8s-platform-intelligence,master-thesis-enron,ev-charging-analytics,ecommerce-sales-forecasting" | split: "," %}
+  {% for slug in featured %}
+    {% for project in site.projects %}
+      {% assign current_slug = project.path | split: "/" | last | remove: ".md" | remove: ".html" %}
+      {% if current_slug == slug %}
+        {% include projects/project-card.html project=project %}
+      {% endif %}
+    {% endfor %}
+  {% endfor %}
+  {% for project in site.projects %}
+    {% assign current_slug = project.path | split: "/" | last | remove: ".md" | remove: ".html" %}
+    {% unless featured contains current_slug %}
+      {% include projects/project-card.html project=project %}
+    {% endunless %}
+  {% endfor %}
+</div>

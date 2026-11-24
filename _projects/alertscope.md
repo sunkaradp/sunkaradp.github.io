@@ -1,11 +1,14 @@
 ---
 name: AlertScope
-tools: [Python, Prometheus, Loki, Kubernetes, Alertmanager]
-description: Incident investigation context from metrics, logs and Kubernetes state.
+tools: [Python, FastAPI, Prometheus, Loki, Kubernetes, Alertmanager, Slack]
+description: Collects metrics, logs and Kubernetes context around an alert to produce an evidence-based first-pass incident investigation.
+repo: https://github.com/sunkaradp/alertscope
+preview_label: INCIDENT INVESTIGATION
+preview: "Alertmanager|Context collection|AI-assisted analysis"
+preview_note: "Prometheus · Loki · Kubernetes · Slack"
 ---
+AlertScope is an Alertmanager webhook service that gathers Prometheus metrics, Loki logs and Kubernetes pod context, then produces a first-pass diagnosis for Slack.
 
-AlertScope collects context around an alert from Prometheus, Loki and Kubernetes, then prepares a first-pass incident summary for Slack.
+The local demonstration includes a failure-injection service and an observability stack. The public GitHub Pages console is a static frontend; the FastAPI service and supporting infrastructure must be deployed separately. The README documents this boundary and the connection steps.
 
-The project focuses on helping an engineer start an investigation with relevant evidence rather than scattered dashboards. It includes a local failure demonstration and cloud identity configuration.
-
-[View source code](https://github.com/sunkaradp/alertscope)
+[Source code and architecture](https://github.com/sunkaradp/alertscope)
