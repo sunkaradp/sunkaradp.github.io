@@ -4,6 +4,7 @@ weight: 7
 tools: [Kafka, Python, Apache Airflow, Docker, Data Engineering]
 description: Collaborative streaming and batch pipeline for synthetic EV charging-session data, with documented individual contributions.
 repo: https://github.com/sunkaradp/ev-charging-sessions
+demo: https://sunkaradp.github.io/ev-charging-analytics-demo/
 preview_label: DATA PIPELINE
 preview: "Event generator|Kafka stream|Airflow batch"
 preview_note: "Implemented repository flow"
