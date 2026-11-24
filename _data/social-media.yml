@@ -1,0 +1,8 @@
+github:
+  url: https://github.com/
+  icon: "fab fa-github"
+  color: "333333"
+linkedin:
+  url: https://www.linkedin.com/
+  icon: "fab fa-linkedin"
+  color: "0077b5"
