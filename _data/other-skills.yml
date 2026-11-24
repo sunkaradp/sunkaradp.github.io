@@ -1,0 +1,18 @@
+- name: Kubernetes
+  percentage: 80
+  color: success
+- name: Docker
+  percentage: 80
+  color: success
+- name: CI/CD
+  percentage: 80
+  color: success
+- name: Terraform
+  percentage: 65
+  color: success
+- name: AWS
+  percentage: 65
+  color: success
+- name: Prometheus / Grafana
+  percentage: 70
+  color: success
