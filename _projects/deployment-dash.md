@@ -12,4 +12,5 @@ Deployment Dash analyzes Kubernetes manifests before release and reports explain
 
 The browser performs deterministic checks locally; an optional FastAPI endpoint provides API-backed analysis. It can also import Kubescape SARIF reports from a GitHub Actions scan. It does not connect to or modify a live cluster.
 
-[Source code and setup](https://github.com/sunkaradp/deployment-dash-intelligence)
+- [Live project page](https://sunkaradp.github.io/deployment-dash-intelligence/)
+- [Source code and setup](https://github.com/sunkaradp/deployment-dash-intelligence)
