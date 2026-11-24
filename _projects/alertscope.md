@@ -1,7 +1,6 @@
 ---
 name: AlertScope
 tools: [Python, Prometheus, Loki, Kubernetes, Alertmanager]
-image: ""
 description: Incident investigation context from metrics, logs and Kubernetes state.
 ---
 
