@@ -1,0 +1,9 @@
+- name: Python
+  percentage: 75
+  color: info
+- name: FastAPI
+  percentage: 70
+  color: info
+- name: SQL / PostgreSQL
+  percentage: 70
+  color: info
