@@ -1,0 +1,24 @@
+- title: Master's Thesis
+  from: 2026
+  to: Present
+  description: Working with AIcoo and SRH University on LLM-assisted extraction of project-related information from email collections.
+
+- title: MLOps / DevOps Intern — AIcoo GmbH
+  from: 2026
+  to: 2026
+  description: Built the Kubernetes and CI/CD environment for a FastAPI, frontend and PostgreSQL platform on k3s at Hetzner Cloud.
+
+- title: DevOps Engineer — Skillmine Technology Consulting
+  from: 2023
+  to: 2024
+  description: Worked across application and data migration, CI/CD, Kubernetes and Prometheus/Grafana monitoring.
+
+- title: Junior DevOps Engineer — Test Yantra Software Solutions
+  from: 2021
+  to: 2023
+  description: Worked with AWS infrastructure, Terraform, Ansible, CI/CD and Kubernetes operations.
+
+- title: Software Associate — Tech Mahindra
+  from: 2020
+  to: 2021
+  description: Began professional experience in software delivery and IT operations.
