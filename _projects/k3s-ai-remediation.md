@@ -1,7 +1,6 @@
 ---
 name: Kubernetes AI Remediation
 tools: [Python, FastAPI, Kubernetes, RBAC, Kustomize]
-image: ""
 description: A constrained remediation service built around allowlisted runbooks and safe defaults.
 ---
 
